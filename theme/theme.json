@@ -11,22 +11,22 @@
 				},
 				{
 					"slug": "foreground",
-					"color": "#333333",
+					"color": "rgb(2, 64, 89)",
 					"name": "Foreground"
 				},
 				{
 					"slug": "primary",
-					"color": "#7047EB",
+					"color": "rgb(75, 183, 122)",
 					"name": "Primary"
 				},
 				{
 					"slug": "secondary",
-					"color": "#B0413E",
+					"color": "rgb(63, 109, 128)",
 					"name": "Secondary"
 				},
 				{
 					"slug": "tertiary",
-					"color": "#B0413E",
+					"color": "rgb(184, 199, 205)",
 					"name": "Tertiary"
 				}
 			]
