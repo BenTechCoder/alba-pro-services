@@ -1,0 +1,145 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `base` layer
+ */
+
+/**
+ * This uses the background and foreground colors declared in the `theme.json`
+ * file and is applied both to the front end and in the block editor.
+ */
+
+:root {
+	/* @utopia typeScale({
+    minWidth: 320,        
+    maxWidth: 1240,         
+    minFontSize: 10,
+    maxFontSize: 18,
+    minTypeScale: 1.2,
+    maxTypeScale: 1.25,
+    positiveSteps: 7,
+    negativeSteps: 2,
+    relativeTo: 'viewport', 
+    prefix: 'step'          
+  }); */
+}
+
+body {
+	@apply bg-background text-foreground font-content;
+	font-size: var(--text-step-0);
+}
+
+h1 {
+	font-size: var(--text-step-7);
+}
+
+h2 {
+	font-size: var(--text-step-6);
+}
+
+h3 {
+	font-size: var(--text-step-5);
+}
+
+h1,
+h2,
+h3,
+h4 {
+	max-inline-size: 25ch;
+	@apply font-display;
+	line-height: 1.5;
+}
+
+/* Set line lengths */
+p,
+li,
+blockquote:not([class]) {
+	max-inline-size: 65ch;
+}
+
+* .text-center > p,
+li,
+blockquote:not([class]) {
+	max-inline-size: none;
+}
+
+blockquote {
+	border-inline-start: 0.5rem solid var(--color-primary);
+	padding: var(--space-m-l);
+	font-size: var(--size-step-2);
+}
+
+blockquote > * + * {
+	margin-block-start: var(--space-m-l);
+}
+
+blockquote :last-child {
+	font-family: var(--font-base);
+	font-style: normal;
+	font-size: var(--size-step-1);
+}
+
+svg {
+	block-size: 2ex;
+	inline-size: auto;
+	flex: none;
+}
+
+strong {
+	font-weight: bolder;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	width: 10%;
+	margin-block: var(--space-m-l);
+	margin-inline-start: 0;
+	background-color: var(--color-bg-accent-2);
+}
+
+[role="list"] {
+	padding: 0;
+}
+
+/* Base interactive elements */
+
+a {
+	color: currentcolor;
+	text-decoration-thickness: 0.08em;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+:focus-visible {
+	outline: 3px solid;
+	outline-offset: 0.3ch;
+}
+
+main:focus {
+	outline: none;
+}
+
+.preload-transitions * {
+	transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	::after,
+	::before {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+/* 
+	TODO:
+	3. Add custom colors, typography, and spacing to theme.json + recipe in comments
+	*/

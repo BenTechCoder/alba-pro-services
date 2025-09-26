@@ -1,0 +1,53 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "background",
+					"color": "#FFFDFD",
+					"name": "Background"
+				},
+				{
+					"slug": "foreground",
+					"color": "#333333",
+					"name": "Foreground"
+				},
+				{
+					"slug": "primary",
+					"color": "#7047EB",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"color": "#B0413E",
+					"name": "Secondary"
+				},
+				{
+					"slug": "tertiary",
+					"color": "#B0413E",
+					"name": "Tertiary"
+				}
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"name": "Headers",
+					"slug": "display",
+					"fontFamily": "display, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
+				},
+				{
+					"name": "Content",
+					"slug": "content",
+					"fontFamily": "content, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "40rem",
+			"wideSize": "60rem"
+		}
+	}
+}

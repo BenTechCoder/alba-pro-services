@@ -1,0 +1,14 @@
+.btn {
+	@apply rounded-md;
+	padding: var(--spacing-xs);
+	/* transition-property: border;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in-out; */
+	cursor: pointer;
+}
+/* Hover and focus values and animation to be seen at build */
+/* .btn:hover,
+.btn:focus {
+	border-bottom: 4px solid var(--hover-color, theme(colors.dark));
+	border-right: 4px solid var(--hover-color, theme(colors.dark));
+} */
