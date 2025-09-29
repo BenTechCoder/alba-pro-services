@@ -10,15 +10,14 @@
 	font-display: swap;
 	src:
 		local(""),
-		url("fonts/Raleway-VariableFont_wght.woff2") format("woff2");
+		url("fonts/Quicksand-VariableFont_wght.woff2") format("woff2");
 }
 
 @font-face {
 	font-family: display;
 	font-style: normal;
 	font-display: swap;
-	font-weight: 900;
 	src:
 		local(""),
-		url("fonts/Raleway-VariableFont_wght.woff2") format("woff2");
+		url("fonts/SuezOne-Regular.woff2") format("woff2");
 }
