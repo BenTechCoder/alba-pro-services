@@ -8,13 +8,12 @@
  */
 
 ?>
-<header id="masthead" class="bg-primary py-s-m text-background">
+<header id="masthead" class="bg-foreground py-s-m text-background">
 
 	<div class="wrapper pt-s-m">
 		<div class="nav__inner flex">
 			
-			
-				<p class="text-step-2"><a href="/">_tw_client_starter</a></p>
+			<?php the_custom_logo(); ?>
 			
 
 			<burger-menu max-width="600">

@@ -1,7 +1,7 @@
 .switcher {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--space-m);
+	gap: var(--spacing-m);
 }
 
 .switcher > * {
