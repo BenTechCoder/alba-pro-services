@@ -19,9 +19,7 @@ get_header();
      <a href="https://www.lebronconsulting.tech" class="btn bg-foreground text-background">Lebron Consulting</a>
 </section>
 
-<section class="wrapper py-xl">
-    <a href="https://www.lebronconsulting.tech" class="btn outline-2 outline-primary">Lebron Consulting</a>
-    <a href="https://www.lebronconsulting.tech" class="btn bg-foreground text-background">Lebron Consulting</a>
-</section>
+<?php get_template_part("template-parts/components/reviews/snippet"); ?>
+
 
 <?php get_footer(); ?>

@@ -38,6 +38,8 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --color-background: var(--wp--preset--color--background);
   --color-foreground: var(--wp--preset--color--foreground);
   --color-primary: var(--wp--preset--color--primary);
+  --color-secondary: var(--wp--preset--color--secondary);
+  --color-tertiary: var(--wp--preset--color--tertiary);
   --container-content: var(--wp--style--global--content-size);
   --container-wide: var(--wp--style--global--wide-size);
   --font-display: display, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
@@ -52,7 +54,9 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --spacing-xs: clamp(0.5rem, 0.3478rem + 0.7609vw, 0.9375rem);
   --spacing-s: clamp(0.625rem, 0.4076rem + 1.087vw, 1.25rem);
   --spacing-m: clamp(0.9375rem, 0.6114rem + 1.6304vw, 1.875rem);
+  --spacing-l: clamp(1.25rem, 0.8152rem + 2.1739vw, 2.5rem);
   --spacing-xl: clamp(1.875rem, 1.2228rem + 3.2609vw, 3.75rem);
+  --spacing-2xl: clamp(2.5rem, 1.6304rem + 4.3478vw, 5rem);
   --spacing-s-m: clamp(0.625rem, 0.1902rem + 2.1739vw, 1.875rem);
   --spacing-m-l: clamp(0.9375rem, 0.394rem + 2.7174vw, 2.5rem);
 }
@@ -464,6 +468,24 @@ main:focus {
   background: transparent;
   border-color: transparent;
   transform: rotate(180deg);
+}
+.stars {
+  --percent: calc(var(--rating) / 5 * 100%);
+  font-size: var(--text-step--0);
+  display: inline-block;
+  line-height: 1;
+}
+.stars::before {
+  content: "★★★★★";
+  letter-spacing: 3px;
+  background: linear-gradient(	90deg,	var(--color-background) var(--percent),	var(--color-foreground) var(--percent)	);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.reviews-snippet {
+  background-image: var(--reviews-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .center {
   box-sizing: content-box;
@@ -1019,6 +1041,9 @@ main:focus {
 .flex {
   display: flex;
 }
+.grid {
+  display: grid;
+}
 .max-w-none {
   max-width: none;
 }
@@ -1059,6 +1084,18 @@ main:focus {
 .bg-foreground {
   background-color: var(--color-foreground);
 }
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+.bg-tertiary {
+  background-color: var(--color-tertiary);
+}
+.p-m {
+  padding: var(--spacing-m);
+}
+.py-2xl {
+  padding-block: var(--spacing-2xl);
+}
 .py-s-m {
   padding-block: var(--spacing-s-m);
 }
@@ -1071,12 +1108,15 @@ main:focus {
 .text-background {
   color: var(--color-background);
 }
-.outline-2 {
-  outline-style: var(--tw-outline-style);
-  outline-width: 2px;
+.text-foreground {
+  color: var(--color-foreground);
 }
-.outline-primary {
-  outline-color: var(--color-primary);
+.outline {
+  outline-style: var(--tw-outline-style);
+  outline-width: 1px;
+}
+.outline-foreground {
+  outline-color: var(--color-foreground);
 }
 .content-none {
   --tw-content: none;
