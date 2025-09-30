@@ -136,6 +136,7 @@ svg,
 canvas {
 	max-inline-size: 100%;
 	block-size: auto;
+	object-fit: cover;
 	vertical-align: middle;
 	font-style: italic;
 	background-repeat: no-repeat;
