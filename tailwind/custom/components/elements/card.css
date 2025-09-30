@@ -5,7 +5,7 @@
 [data-card="services-home"] {
 	display: grid;
 	grid-template-areas: "card-img";
-	aspect-ratio: 16/9;
+	overflow: hidden;
 }
 
 [data-card="services-home"] > * {
@@ -13,12 +13,21 @@
 }
 
 [data-card="services-home"] img {
+	aspect-ratio: 16/9;
+	object-fit: cover;
 	width: 100%;
+	height: 100%;
+	transition: transform 0.3s ease;
+    will-change: transform; 
+}
+/* Slightly zooms in the image */
+[data-card="services-home"]:is(:hover, :focus) img {
+	transform: scale(1.1);
 }
 
 [data-card="services-home"] .content {
 	place-self: end start;
-    position: relative;
+	position: relative;
 }
 
 [data-card="services-home"]::before {
@@ -34,4 +43,5 @@
 		rgba(255, 255, 255, 0) 100%
 	);
 	pointer-events: none; /* Ensures the overlay doesn't block interactions with the image */
+    will-change: background;
 }

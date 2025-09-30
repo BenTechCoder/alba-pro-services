@@ -359,17 +359,26 @@ img, picture, svg, canvas {
 [data-card="services-home"] {
   display: grid;
   grid-template-areas: "card-img";
-  aspect-ratio: 16/9;
+  overflow: hidden;
 }
 [data-card="services-home"] > * {
   grid-area: card-img;
 }
 [data-card="services-home"] img {
+  aspect-ratio: 16/9;
+  object-fit: cover;
   width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+[data-card="services-home"]:is(:hover, :focus) img {
+  transform: scale(1.1);
 }
 [data-card="services-home"] .content {
   place-self: end start;
   position: relative;
+  z-index: 2;
 }
 [data-card="services-home"]::before {
   content: "";
@@ -380,6 +389,7 @@ img, picture, svg, canvas {
   height: 100%;
   background: linear-gradient(	90deg,	rgba(2, 50, 133, 0.28) 0%,	rgba(255, 255, 255, 0) 100%	);
   pointer-events: none;
+  z-index: 1;
 }
 .nav {
   display: flex;
