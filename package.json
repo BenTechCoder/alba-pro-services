@@ -17,10 +17,10 @@
 		"postcss-import-ext-glob": "^2.1.1",
 		"postcss-nesting": "^13.0.1",
 		"postcss-url": "^10.1.3",
+		"postcss-utopia": "^1.1.0",
 		"prettier": "^3.5.3",
 		"prettier-plugin-tailwindcss": "^0.6.11",
-		"tailwindcss": "^4.1.5",
-		"postcss-utopia": "^1.1.0"
+		"tailwindcss": "^4.1.5"
 	},
 	"scripts": {
 		"development:tailwind:frontend": "npx postcss ./tailwind.css -o ./theme/style.css --verbose",
@@ -45,5 +45,8 @@
 		"prod": "npm run production",
 		"zip": "node node_scripts/zip.js _tw",
 		"bundle": "run-s production zip"
+	},
+	"dependencies": {
+		"scrollyfills": "^1.0.3"
 	}
 }

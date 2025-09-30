@@ -23,4 +23,9 @@ get_header();
 
 <?php get_template_part("template-parts/components/services/services-container"); ?>
 
+<section class="stack wrapper py-xl">
+        <h2 class="center text-center">Before & After</h2>
+        <?php get_template_part('template-parts/components/carousel/carousel-container'); ?>
+</section>
+
 <?php get_footer(); ?>

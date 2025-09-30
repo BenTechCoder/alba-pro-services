@@ -10,11 +10,12 @@
  */
 
 import BurgerMenu from './components/nav';
+import Carousel from './components/carousel';
+import 'scrollyfills';
 
 if ('customElements' in window) {
 	customElements.define('burger-menu', BurgerMenu);
 }
-
 // Reel layout
 
 (function () {
@@ -41,3 +42,8 @@ if ('customElements' in window) {
 		}
 	}
 })();
+
+
+document.querySelectorAll('.gui-carousel').forEach(element => {
+  new Carousel(element)
+})
