@@ -128,7 +128,17 @@ main:focus {
 	}
 }
 
-/* 
-	TODO:
-	3. Add custom colors, typography, and spacing to theme.json + recipe in comments
-	*/
+/* Images */
+
+img,
+picture,
+svg,
+canvas {
+	max-inline-size: 100%;
+	block-size: auto;
+	vertical-align: middle;
+	font-style: italic;
+	background-repeat: no-repeat;
+	background-size: cover;
+	shape-margin: 0.75rem;
+}

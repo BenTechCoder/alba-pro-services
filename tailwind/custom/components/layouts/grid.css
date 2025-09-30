@@ -5,6 +5,6 @@
 
 @supports (width: min(250px, 100%)) {
 	.grid {
-		grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-min-size, 250px), 100%), 1fr));
 	}
 }

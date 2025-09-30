@@ -1,0 +1,37 @@
+[data-card="services"] img {
+	width: 100%;
+}
+
+[data-card="services-home"] {
+	display: grid;
+	grid-template-areas: "card-img";
+	aspect-ratio: 16/9;
+}
+
+[data-card="services-home"] > * {
+	grid-area: card-img;
+}
+
+[data-card="services-home"] img {
+	width: 100%;
+}
+
+[data-card="services-home"] .content {
+	place-self: end start;
+    position: relative;
+}
+
+[data-card="services-home"]::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		rgba(2, 50, 133, 0.28) 0%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	pointer-events: none; /* Ensures the overlay doesn't block interactions with the image */
+}

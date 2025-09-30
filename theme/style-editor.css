@@ -310,6 +310,15 @@ main:focus {
     transition-duration: 0.01ms !important;
   }
 }
+img, picture, svg, canvas {
+  max-inline-size: 100%;
+  block-size: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
+}
 .page-title, .entry-title {
   margin-inline: auto;
   margin-bottom: calc(var(--spacing) * 6);
@@ -341,7 +350,36 @@ main:focus {
 .btn {
   border-radius: var(--radius-md);
   padding: var(--spacing-xs);
+  margin: unset;
   cursor: pointer;
+}
+[data-card="services"] img {
+  width: 100%;
+}
+[data-card="services-home"] {
+  display: grid;
+  grid-template-areas: "card-img";
+  aspect-ratio: 16/9;
+}
+[data-card="services-home"] > * {
+  grid-area: card-img;
+}
+[data-card="services-home"] img {
+  width: 100%;
+}
+[data-card="services-home"] .content {
+  place-self: end start;
+  position: relative;
+}
+[data-card="services-home"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(	90deg,	rgba(2, 50, 133, 0.28) 0%,	rgba(255, 255, 255, 0) 100%	);
+  pointer-events: none;
 }
 .nav {
   display: flex;
@@ -509,7 +547,7 @@ main:focus {
 }
 @supports (width: min(250px, 100%)) {
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-min-size, 250px), 100%), 1fr));
   }
 }
 .reel {
@@ -596,6 +634,9 @@ main:focus {
   clip-path: inset(50%);
   white-space: nowrap;
   border-width: 0;
+}
+.relative {
+  position: relative;
 }
 .prose {
   color: var(--tw-prose-body);
@@ -1085,6 +1126,9 @@ main:focus {
 .bg-foreground {
   background-color: var(--color-foreground);
 }
+.bg-primary {
+  background-color: var(--color-primary);
+}
 .bg-secondary\/80 {
   background-color: var(--color-secondary);
 }
@@ -1095,6 +1139,9 @@ main:focus {
 }
 .p-m {
   padding: var(--spacing-m);
+}
+.p-s {
+  padding: var(--spacing-s);
 }
 .py-2xl {
   padding-block: var(--spacing-2xl);

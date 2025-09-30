@@ -1,6 +1,7 @@
 .btn {
 	@apply rounded-md;
 	padding: var(--spacing-xs);
+	margin: unset;
 	/* transition-property: border;
 	transition-duration: 0.3s;
 	transition-timing-function: ease-in-out; */

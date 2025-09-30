@@ -10,7 +10,7 @@
     <?php
 } ?>
 
-    <ul class="grid py-xl wrapper" role="list">
+    <ul class="grid py-xl wrapper" role="list" style="--grid-min-size: 20rem">
 
         <?php
         $args = array(
