@@ -37,9 +37,10 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --default-mono-font-family: var(--font-mono);
   --color-background: var(--wp--preset--color--background);
   --color-foreground: var(--wp--preset--color--foreground);
+  --color-light: var(--wp--preset--color--background);
+  --color-dark: var(--wp--preset--color--foreground);
   --color-primary: var(--wp--preset--color--primary);
   --color-secondary: var(--wp--preset--color--secondary);
-  --color-tertiary: var(--wp--preset--color--tertiary);
   --container-content: var(--wp--style--global--content-size);
   --container-wide: var(--wp--style--global--wide-size);
   --font-display: display, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
@@ -54,11 +55,11 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --spacing-xs: clamp(0.5rem, 0.3478rem + 0.7609vw, 0.9375rem);
   --spacing-s: clamp(0.625rem, 0.4076rem + 1.087vw, 1.25rem);
   --spacing-m: clamp(0.9375rem, 0.6114rem + 1.6304vw, 1.875rem);
-  --spacing-l: clamp(1.25rem, 0.8152rem + 2.1739vw, 2.5rem);
   --spacing-xl: clamp(1.875rem, 1.2228rem + 3.2609vw, 3.75rem);
   --spacing-2xl: clamp(2.5rem, 1.6304rem + 4.3478vw, 5rem);
   --spacing-s-m: clamp(0.625rem, 0.1902rem + 2.1739vw, 1.875rem);
   --spacing-m-l: clamp(0.9375rem, 0.394rem + 2.7174vw, 2.5rem);
+  --spacing-2xl-3xl: clamp(2.5rem, 0.7609rem + 8.6957vw, 7.5rem);
 }
 @font-face {
   font-family: content;
@@ -1084,17 +1085,22 @@ main:focus {
 .bg-foreground {
   background-color: var(--color-foreground);
 }
-.bg-secondary {
+.bg-secondary\/80 {
   background-color: var(--color-secondary);
 }
-.bg-tertiary {
-  background-color: var(--color-tertiary);
+@supports (color: color-mix(in lab, red, red)) {
+  .bg-secondary\/80 {
+    background-color: color-mix(in oklab, var(--color-secondary) 80%, transparent);
+  }
 }
 .p-m {
   padding: var(--spacing-m);
 }
 .py-2xl {
   padding-block: var(--spacing-2xl);
+}
+.py-2xl-3xl {
+  padding-block: var(--spacing-2xl-3xl);
 }
 .py-s-m {
   padding-block: var(--spacing-s-m);
@@ -1105,18 +1111,30 @@ main:focus {
 .pt-s-m {
   padding-top: var(--spacing-s-m);
 }
+.text-center {
+  text-align: center;
+}
 .text-background {
   color: var(--color-background);
 }
 .text-foreground {
   color: var(--color-foreground);
 }
+.text-light {
+  color: var(--color-light);
+}
 .outline {
   outline-style: var(--tw-outline-style);
   outline-width: 1px;
 }
+.outline-dark {
+  outline-color: var(--color-dark);
+}
 .outline-foreground {
   outline-color: var(--color-foreground);
+}
+.outline-primary {
+  outline-color: var(--color-primary);
 }
 .content-none {
   --tw-content: none;

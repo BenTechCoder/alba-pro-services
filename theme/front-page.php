@@ -21,5 +21,6 @@ get_header();
 
 <?php get_template_part("template-parts/components/reviews/snippet"); ?>
 
+<?php get_template_part("template-parts/components/services/services-container"); ?>
 
 <?php get_footer(); ?>
