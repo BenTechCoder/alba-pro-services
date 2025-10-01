@@ -27,6 +27,8 @@ carousel-component {
 }
 
 .carousel img {
+  aspect-ratio: var(--carousel-img-aspect-ratio, 16/9);
+  height: var(--carousel-img-height, 100%);
 	object-fit: cover;
 }
 
@@ -41,10 +43,10 @@ carousel-component {
 
 .carousel-prev,
 .carousel-next {
-	@apply bg-primary/50;
+	@apply bg-primary/70;
 	color: var(--color-light);
 	border: none;
-	padding: 0.5rem 1rem; /* Hardcoded padding */
+	padding: var(--spacing-m);
 	cursor: pointer;
 }
 

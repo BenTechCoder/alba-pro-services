@@ -418,6 +418,8 @@ carousel-component {
   opacity: 1;
 }
 .carousel img {
+  aspect-ratio: var(--carousel-img-aspect-ratio, 16/9);
+  height: var(--carousel-img-height, 100%);
   object-fit: cover;
 }
 .carousel-controls {
@@ -433,13 +435,13 @@ carousel-component {
 }
 @supports (color: color-mix(in lab, red, red)) {
   .carousel-prev, .carousel-next {
-    background-color: color-mix(in oklab, var(--color-primary) 50%, transparent);
+    background-color: color-mix(in oklab, var(--color-primary) 70%, transparent);
   }
 }
 .carousel-prev, .carousel-next {
-  color: var(--color-tertiary);
+  color: var(--color-light);
   border: none;
-  padding: 0.5rem 1rem;
+  padding: var(--spacing-m);
   cursor: pointer;
 }
 .carousel-prev:focus, .carousel-next:focus {
