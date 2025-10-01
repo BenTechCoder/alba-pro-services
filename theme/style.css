@@ -404,7 +404,7 @@ carousel-component {
   grid-template-rows: 1fr auto;
   overflow: hidden;
   width: 100%;
-  height: clamp(15rem, 50vw, 25rem);
+  max-height: 100vh;
   position: relative;
 }
 .carousel-item {
@@ -418,8 +418,6 @@ carousel-component {
   opacity: 1;
 }
 .carousel img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 .carousel-controls {
