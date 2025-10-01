@@ -1,56 +1,54 @@
 carousel-component {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
+	display: block;
+	position: relative;
+	overflow: hidden;
 }
 
 .carousel {
-    display: grid;
-    grid-template-areas: "items";
-    grid-template-rows: 1fr auto;
-    overflow: hidden;
-    width: 100%;
-    height: clamp(15rem, 50vw, 25rem); /* Hardcoded responsive height */
-    position: relative;
+	display: grid;
+	grid-template-areas: "items";
+	grid-template-rows: 1fr auto;
+	overflow: hidden;
+	width: 100%;
+	max-height: 100vh;
+	position: relative;
 }
 
 .carousel-item {
-    grid-area: items;
-    display: grid;
-    place-items: center;
-    opacity: 0;
-    transition: opacity 0.5s ease; /* Hardcoded transition duration */
+	grid-area: items;
+	display: grid;
+	place-items: center;
+	opacity: 0;
+	transition: opacity 0.5s ease;
 }
 
 .carousel-item.active {
-    opacity: 1;
+	opacity: 1;
 }
 
 .carousel img {
-    width: 100%; /* Hardcoded width */
-    height: 100%; /* Hardcoded height */
-    object-fit: cover;
+	object-fit: cover;
 }
 
 .carousel-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    grid-area: controls;
-    padding: 0 1rem; /* Hardcoded padding */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	grid-area: items;
+	padding: var(--spacing-s);
+	z-index: 1;
 }
 
 .carousel-prev,
 .carousel-next {
-    background: rgba(0, 0, 0, 0.5); /* Hardcoded background color */
-    color: white; /* Hardcoded text color */
-    border: none;
-    padding: 0.5rem 1rem; /* Hardcoded padding */
-    cursor: pointer;
+	@apply bg-primary/50;
+	color: var(--color-light);
+	border: none;
+	padding: 0.5rem 1rem; /* Hardcoded padding */
+	cursor: pointer;
 }
 
 .carousel-prev:focus,
 .carousel-next:focus {
-    outline: 2px solid white; /* Hardcoded focus outline */
+	outline: 2px solid var(--color-tertiary); /* Hardcoded focus outline */
 }

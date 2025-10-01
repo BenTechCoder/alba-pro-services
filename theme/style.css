@@ -41,6 +41,7 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --color-dark: var(--wp--preset--color--foreground);
   --color-primary: var(--wp--preset--color--primary);
   --color-secondary: var(--wp--preset--color--secondary);
+  --color-tertiary: var(--wp--preset--color--tertiary);
   --container-content: var(--wp--style--global--content-size);
   --container-wide: var(--wp--style--global--wide-size);
   --font-display: display, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
@@ -55,6 +56,7 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --spacing-xs: clamp(0.5rem, 0.3478rem + 0.7609vw, 0.9375rem);
   --spacing-s: clamp(0.625rem, 0.4076rem + 1.087vw, 1.25rem);
   --spacing-m: clamp(0.9375rem, 0.6114rem + 1.6304vw, 1.875rem);
+  --spacing-l: clamp(1.25rem, 0.8152rem + 2.1739vw, 2.5rem);
   --spacing-xl: clamp(1.875rem, 1.2228rem + 3.2609vw, 3.75rem);
   --spacing-2xl: clamp(2.5rem, 1.6304rem + 4.3478vw, 5rem);
   --spacing-s-m: clamp(0.625rem, 0.1902rem + 2.1739vw, 1.875rem);
@@ -395,7 +397,6 @@ carousel-component {
   display: block;
   position: relative;
   overflow: hidden;
-  width: 100%;
 }
 .carousel {
   display: grid;
@@ -425,18 +426,26 @@ carousel-component {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  grid-area: controls;
-  padding: 0 1rem;
+  grid-area: items;
+  padding: var(--spacing-s);
+  z-index: 1;
 }
 .carousel-prev, .carousel-next {
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  background-color: var(--color-primary);
+}
+@supports (color: color-mix(in lab, red, red)) {
+  .carousel-prev, .carousel-next {
+    background-color: color-mix(in oklab, var(--color-primary) 50%, transparent);
+  }
+}
+.carousel-prev, .carousel-next {
+  color: var(--color-tertiary);
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
 .carousel-prev:focus, .carousel-next:focus {
-  outline: 2px solid white;
+  outline: 2px solid var(--color-tertiary);
 }
 .nav {
   display: flex;
@@ -600,12 +609,20 @@ carousel-component {
 }
 .grid {
   display: grid;
-  grid-gap: var(--spacing-m);
+  grid-template-columns: repeat( var(--grid-placement, auto-fill), minmax(var(--grid-min-item-size, 16rem), 1fr) );
+  gap: var(--gutter, var(--spacing-m));
 }
-@supports (width: min(250px, 100%)) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-min-size, 250px), 100%), 1fr));
-  }
+.grid[data-rows='masonry'] {
+  grid-template-rows: masonry;
+  align-items: start;
+}
+.grid[data-layout='50-50'] {
+  --grid-placement: auto-fit;
+  --grid-min-item-size: clamp(16rem, 50vw, 28rem);
+}
+.grid[data-layout='thirds'] {
+  --grid-placement: auto-fit;
+  --grid-min-item-size: clamp(16rem, 33%, 20rem);
 }
 .reel {
   display: flex;
@@ -1137,9 +1154,6 @@ carousel-component {
 .max-w-none {
   max-width: none;
 }
-.transform {
-  transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-}
 .prose .wp-block-table td {
   border: 0;
 }
@@ -1183,6 +1197,9 @@ carousel-component {
 }
 .py-2xl-3xl {
   padding-block: var(--spacing-2xl-3xl);
+}
+.py-l {
+  padding-block: var(--spacing-l);
 }
 .py-s-m {
   padding-block: var(--spacing-s-m);
@@ -1271,26 +1288,6 @@ carousel-component {
   syntax: "*";
   inherits: false;
 }
-@property --tw-rotate-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-y {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-rotate-z {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-x {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-skew-y {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-outline-style {
   syntax: "*";
   inherits: false;
@@ -1353,11 +1350,6 @@ carousel-component {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-font-weight: initial;
-      --tw-rotate-x: initial;
-      --tw-rotate-y: initial;
-      --tw-rotate-z: initial;
-      --tw-skew-x: initial;
-      --tw-skew-y: initial;
       --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;

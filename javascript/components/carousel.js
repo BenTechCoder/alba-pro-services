@@ -34,7 +34,7 @@ export default class CarouselComponent extends HTMLElement {
         const startAutoplay = () => {
             return setInterval(() => {
                 if (autoplay) showNext();
-            }, 3000); // Hardcoded autoplay interval (3 seconds)
+            }, 4000); // Hardcoded autoplay interval (4 seconds)
         };
 
         let interval = startAutoplay();
@@ -45,10 +45,10 @@ export default class CarouselComponent extends HTMLElement {
             clearInterval(interval);
         });
 
-        this.addEventListener('mouseleave', () => {
-            autoplay = true;
-            interval = startAutoplay();
-        });
+        // this.addEventListener('mouseleave', () => {
+        //     autoplay = true;
+        //     interval = startAutoplay();
+        // });
 
         // Add keyboard navigation
         const handleKeydown = (e) => {
