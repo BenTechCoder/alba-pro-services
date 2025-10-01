@@ -1,23 +1,34 @@
-<div class="gui-carousel" carousel-pagination="dots" carousel-controls="auto" carousel-scrollbar="auto"
-  carousel-snapstop="auto" aria-label="Featured Items Carousel">
-  <div class="gui-carousel--scroller">
+<carousel-component>
+    <div class="carousel" tabindex="0" aria-live="polite">
+        <div class="carousel-item" aria-hidden="true">
+            <figure class="animate-visibility captioned-image">
+                <figcaption>
+                    <a href="#">Learn more about large ocean waves</a>
+                </figcaption>
+                <img loading="lazy" width="1280" height="720" src="https://picsum.photos/seed/this/1280/720.webp"
+                    alt="Blue ocean with a large wave">
+            </figure>
+        </div>
+         <div class="carousel-item" aria-hidden="true">
+            <figure class="animate-visibility captioned-image">
+                <figcaption>
+                    <a href="#">Learn more about large ocean waves</a>
+                </figcaption>
+                <img loading="lazy" width="1280" height="720" src="https://picsum.photos/seed/this/1280/720.webp"
+                    alt="Blue ocean with a large wave">
+            </figure>
+        </div>
+         <div class="carousel-item" aria-hidden="true">
+            <figure class="animate-visibility captioned-image">
+                <figcaption>
+                    <a href="#">Learn more about large ocean waves</a>
+                </figcaption>
+                <img loading="lazy" width="1280" height="720" src="https://picsum.photos/seed/this/1280/720.webp"
+                    alt="Blue ocean with a large wave">
+            </figure>
+        </div>
+    </div>
 
-    <div class="gui-carousel--snap">
-      <figure class="animate-visibility captioned-image">
-        <img loading="lazy" width="1280" height="720" src="https://picsum.photos/seed/this/1280/720.webp"
-          alt="Blue ocean with a large wave">
-        <figcaption>
-          <a href="#">Learn more about large ocean waves</a>
-        </figcaption>
-      </figure>
-    </div>
-     <div class="gui-carousel--snap">
-      <figure class="animate-visibility captioned-image">
-        <img loading="lazy" width="1280" height="720" src="https://picsum.photos/seed/this/1280/720.webp"
-          alt="Blue ocean with a large wave">
-        <figcaption>
-          <a href="#">Learn more about large ocean waves</a>
-        </figcaption>
-      </figure>
-    </div>
-</div>
+    <button class="carousel-prev" aria-label="Previous slide">❮</button>
+    <button class="carousel-next" aria-label="Next slide">❯</button>
+</carousel-component>

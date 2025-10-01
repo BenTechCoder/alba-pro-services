@@ -8,13 +8,12 @@
  * For esbuild documentation, please see:
  * https://esbuild.github.io/
  */
-
 import BurgerMenu from './components/nav';
-import Carousel from './components/carousel';
-import 'scrollyfills';
+import CarouselComponent from './components/carousel';
 
 if ('customElements' in window) {
 	customElements.define('burger-menu', BurgerMenu);
+	customElements.define('carousel-component', CarouselComponent);
 }
 // Reel layout
 
@@ -42,8 +41,3 @@ if ('customElements' in window) {
 		}
 	}
 })();
-
-
-document.querySelectorAll('.gui-carousel').forEach(element => {
-  new Carousel(element)
-})
