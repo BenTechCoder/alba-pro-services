@@ -1,7 +1,7 @@
 <section class="reviews-snippet py-2xl text-foreground" style="--spacing: var(--spacing-m);">
     <div class="wrapper stack">
         <h2>Happy Customers</h2>
-        <ul class="grid">
+        <ul class="grid" style="--grid-placement: auto-fit;">
             <?php
             $args = array(
                 'post_type'  => 'reviews',
