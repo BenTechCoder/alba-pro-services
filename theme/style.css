@@ -59,6 +59,7 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --spacing-l: clamp(1.25rem, 0.8152rem + 2.1739vw, 2.5rem);
   --spacing-xl: clamp(1.875rem, 1.2228rem + 3.2609vw, 3.75rem);
   --spacing-2xl: clamp(2.5rem, 1.6304rem + 4.3478vw, 5rem);
+  --spacing-3xl: clamp(3.75rem, 2.4457rem + 6.5217vw, 7.5rem);
   --spacing-s-m: clamp(0.625rem, 0.1902rem + 2.1739vw, 1.875rem);
   --spacing-m-l: clamp(0.9375rem, 0.394rem + 2.7174vw, 2.5rem);
   --spacing-2xl-3xl: clamp(2.5rem, 0.7609rem + 8.6957vw, 7.5rem);
@@ -351,6 +352,9 @@ img, picture, svg, canvas {
   margin-left: calc(var(--spacing) * 8);
 }
 .btn {
+  display: inline-flex;
+  align-self: start;
+  justify-content: center;
   border-radius: var(--radius-md);
   padding: var(--spacing-xs);
   margin: unset;
@@ -600,6 +604,10 @@ carousel-component {
   flex-direction: column;
   align-items: center;
 }
+.center .btn {
+  box-sizing: content-box;
+  margin-inline: auto;
+}
 .cluster {
   display: flex;
   flex-wrap: wrap;
@@ -655,6 +663,20 @@ carousel-component {
 .reel.overflowing {
   padding-block-end: 1rem;
 }
+.sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sidebar-space, var(--spacing-l));
+}
+.sidebar > :first-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(--sidebar-content, 30%);
+}
+.sidebar > :last-child {
+  flex-grow: 1;
+  flex-basis: var(--sidebar-basis, 0);
+}
 .stack {
   display: flex;
   flex-direction: column;
@@ -664,16 +686,16 @@ carousel-component {
   margin-block: 0;
 }
 .stack > * + * {
-  margin-block-start: var(--spacing, var(--spacing-m));
+  margin-block-start: var(--stack-spacing, var(--spacing-m));
 }
 .switcher {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-m);
+  gap: var(--switcher-spacing, var(--spacing-m));
 }
 .switcher > * {
   flex-grow: 1;
-  flex-basis: calc((30rem - 100%) * 999);
+  flex-basis: calc((var(--switcher-basis,30rem) - 100%) * 999);
 }
 .switcher > :nth-last-child(n + 5), .switcher > :nth-last-child(n + 5) ~ * {
   flex-basis: 100%;
@@ -1151,6 +1173,9 @@ carousel-component {
 .grid {
   display: grid;
 }
+.max-w-full {
+  max-width: 100%;
+}
 .max-w-none {
   max-width: none;
 }
@@ -1178,6 +1203,9 @@ carousel-component {
 .bg-primary {
   background-color: var(--color-primary);
 }
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
 .bg-secondary\/80 {
   background-color: var(--color-secondary);
 }
@@ -1185,6 +1213,9 @@ carousel-component {
   .bg-secondary\/80 {
     background-color: color-mix(in oklab, var(--color-secondary) 80%, transparent);
   }
+}
+.bg-tertiary {
+  background-color: var(--color-tertiary);
 }
 .p-m {
   padding: var(--spacing-m);
@@ -1197,6 +1228,9 @@ carousel-component {
 }
 .py-2xl-3xl {
   padding-block: var(--spacing-2xl-3xl);
+}
+.py-3xl {
+  padding-block: var(--spacing-3xl);
 }
 .py-l {
   padding-block: var(--spacing-l);

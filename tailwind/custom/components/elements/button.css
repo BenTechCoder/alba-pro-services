@@ -1,4 +1,7 @@
 .btn {
+	display: inline-flex;
+	align-self: start;
+	justify-content: center;
 	@apply rounded-md;
 	padding: var(--spacing-xs);
 	margin: unset;
