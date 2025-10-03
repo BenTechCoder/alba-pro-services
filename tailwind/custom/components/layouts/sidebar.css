@@ -11,6 +11,18 @@
 }
 
 .sidebar > :last-child {
+    flex-grow: 1;
+	flex-basis: var(--sidebar-basis, 0);
+}
+
+[data-sidebar="flip"] > :first-child {
 	flex-grow: 1;
 	flex-basis: var(--sidebar-basis, 0);
+	min-inline-size: none;
+}
+
+[data-sidebar="flip"] > :last-child {
+	flex-basis: 0;
+	flex-grow: 999;
+	min-inline-size: var(--sidebar-content, 30%);
 }

@@ -1,0 +1,41 @@
+.why-cta svg {
+	block-size: 4ex;
+	fill: var(--color-primary);
+}
+
+.why-cta-content li {
+	display: flex;
+	gap: var(--spacing-xs-s);
+}
+
+
+.why-cta h3 {
+	@apply font-content text-step-2;
+}
+/* 
+.why-cta-img {
+	max-height: 40vh;
+} */
+
+.why-cta-img img {
+	position: sticky;
+	width: 100%;
+	height: 100%;
+}
+
+@supports (container-type: size) {
+	.why-cta {
+		container-type: inline-size;
+		container-name: why-cta;
+	}
+/* 
+	.why-cta-img {
+		max-height: 50cqh;
+	} */
+
+	@container why-cta (min-width: theme(screens.md)) {
+		.why-cta-img {
+			max-height: 100cqh;
+		}
+	}
+}

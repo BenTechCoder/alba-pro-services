@@ -60,6 +60,7 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --spacing-xl: clamp(1.875rem, 1.2228rem + 3.2609vw, 3.75rem);
   --spacing-2xl: clamp(2.5rem, 1.6304rem + 4.3478vw, 5rem);
   --spacing-3xl: clamp(3.75rem, 2.4457rem + 6.5217vw, 7.5rem);
+  --spacing-xs-s: clamp(0.5rem, 0.2391rem + 1.3043vw, 1.25rem);
   --spacing-s-m: clamp(0.625rem, 0.1902rem + 2.1739vw, 1.875rem);
   --spacing-m-l: clamp(0.9375rem, 0.394rem + 2.7174vw, 2.5rem);
   --spacing-2xl-3xl: clamp(2.5rem, 0.7609rem + 8.6957vw, 7.5rem);
@@ -451,6 +452,34 @@ carousel-component {
 .carousel-prev:focus, .carousel-next:focus {
   outline: 2px solid var(--color-tertiary);
 }
+.why-cta svg {
+  block-size: 4ex;
+  fill: var(--color-primary);
+}
+.why-cta-content li {
+  display: flex;
+  gap: var(--spacing-xs-s);
+}
+.why-cta h3 {
+  font-family: var(--font-content);
+  font-size: var(--text-step-2);
+}
+.why-cta-img img {
+  position: sticky;
+  width: 100%;
+  height: 100%;
+}
+@supports (container-type: size) {
+  .why-cta {
+    container-type: inline-size;
+    container-name: why-cta;
+  }
+  @container why-cta (min-width: 48rem) {
+    .why-cta-img {
+      max-height: 100cqh;
+    }
+  }
+}
 .nav {
   display: flex;
   justify-content: space-between;
@@ -626,7 +655,7 @@ carousel-component {
 }
 .grid[data-layout='50-50'] {
   --grid-placement: auto-fit;
-  --grid-min-item-size: clamp(16rem, 50vw, 28rem);
+  --grid-min-item-size: clamp(10rem, 50vw, 25rem);
 }
 .grid[data-layout='thirds'] {
   --grid-placement: auto-fit;
@@ -676,6 +705,16 @@ carousel-component {
 .sidebar > :last-child {
   flex-grow: 1;
   flex-basis: var(--sidebar-basis, 0);
+}
+[data-sidebar="flip"] > :first-child {
+  flex-grow: 1;
+  flex-basis: var(--sidebar-basis, 0);
+  min-inline-size: none;
+}
+[data-sidebar="flip"] > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(--sidebar-content, 30%);
 }
 .stack {
   display: flex;
