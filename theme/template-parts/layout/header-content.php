@@ -8,9 +8,9 @@
  */
 
 ?>
-<header id="masthead" class="bg-foreground py-s-m text-background">
+<header id="masthead" class="bg-foreground text-background py-s">
 
-	<div class="wrapper pt-s-m">
+	<div class="wrapper">
 		<div class="nav__inner flex">
 			
 			<?php the_custom_logo(); ?>
@@ -18,7 +18,7 @@
 
 			<burger-menu max-width="600">
 				<nav id="site-navigation"
-					aria-label="<?php esc_attr_e('Main Navigation', 'ramirez-contractor'); ?>"
+					aria-label="<?php esc_attr_e('Main Navigation', 'alba-pro-services'); ?>"
 					class="nav">
 					<!-- <button aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'ramirez-contractor'); ?></button> -->
 					<?php

@@ -496,7 +496,7 @@ carousel-component {
   font-family: display;
   max-width: 10ch;
 }
-.nav__logo img {
+.nav__logo img, .custom-logo {
   display: block;
   max-width: 5rem;
   block-size: auto;
@@ -1299,8 +1299,8 @@ carousel-component {
 .py-l {
   padding-block: var(--spacing-l);
 }
-.py-s-m {
-  padding-block: var(--spacing-s-m);
+.py-s {
+  padding-block: var(--spacing-s);
 }
 .py-xl {
   padding-block: var(--spacing-xl);

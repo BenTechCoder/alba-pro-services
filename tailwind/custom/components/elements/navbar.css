@@ -17,7 +17,8 @@
 	max-width: 10ch;
 }
 
-.nav__logo img {
+.nav__logo img,
+.custom-logo {
 	display: block;
 	max-width: 5rem;
 	block-size: auto;
