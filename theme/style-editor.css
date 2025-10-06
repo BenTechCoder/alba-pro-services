@@ -61,7 +61,6 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --spacing-2xl: clamp(2.5rem, 1.6304rem + 4.3478vw, 5rem);
   --spacing-3xl: clamp(3.75rem, 2.4457rem + 6.5217vw, 7.5rem);
   --spacing-xs-s: clamp(0.5rem, 0.2391rem + 1.3043vw, 1.25rem);
-  --spacing-s-m: clamp(0.625rem, 0.1902rem + 2.1739vw, 1.875rem);
   --spacing-m-l: clamp(0.9375rem, 0.394rem + 2.7174vw, 2.5rem);
   --spacing-2xl-3xl: clamp(2.5rem, 0.7609rem + 8.6957vw, 7.5rem);
 }
@@ -362,6 +361,7 @@ img, picture, svg, canvas {
   cursor: pointer;
 }
 [data-card="services"] img {
+  aspect-ratio: 16/9;
   width: 100%;
 }
 [data-card="services-home"] {
@@ -374,7 +374,6 @@ img, picture, svg, canvas {
 }
 [data-card="services-home"] img {
   aspect-ratio: 16/9;
-  object-fit: cover;
   width: 100%;
   height: 100%;
   transition: transform 0.3s ease;
@@ -1261,6 +1260,9 @@ carousel-component {
 .prose .wp-block-table tfoot {
   border-top-width: 1px;
 }
+.bg-dark {
+  background-color: var(--color-dark);
+}
 .bg-foreground {
   background-color: var(--color-foreground);
 }
@@ -1299,14 +1301,14 @@ carousel-component {
 .py-l {
   padding-block: var(--spacing-l);
 }
+.py-m {
+  padding-block: var(--spacing-m);
+}
 .py-s {
   padding-block: var(--spacing-s);
 }
 .py-xl {
   padding-block: var(--spacing-xl);
-}
-.pt-s-m {
-  padding-top: var(--spacing-s-m);
 }
 .text-center {
   text-align: center;

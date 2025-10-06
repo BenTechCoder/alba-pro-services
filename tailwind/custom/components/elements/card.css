@@ -1,4 +1,5 @@
 [data-card="services"] img {
+	aspect-ratio: 16/9;
 	width: 100%;
 }
 
@@ -14,11 +15,10 @@
 
 [data-card="services-home"] img {
 	aspect-ratio: 16/9;
-	object-fit: cover;
 	width: 100%;
 	height: 100%;
 	transition: transform 0.3s ease;
-    will-change: transform; 
+	will-change: transform;
 }
 /* Slightly zooms in the image */
 [data-card="services-home"]:is(:hover, :focus) img {
@@ -43,5 +43,5 @@
 		rgba(255, 255, 255, 0) 100%
 	);
 	pointer-events: none; /* Ensures the overlay doesn't block interactions with the image */
-    will-change: background;
+	will-change: background;
 }
