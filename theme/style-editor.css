@@ -1225,6 +1225,9 @@ carousel-component {
 .grid {
   display: grid;
 }
+.w-4 {
+  width: calc(var(--spacing) * 4);
+}
 .max-w-full {
   max-width: 100%;
 }
@@ -1233,6 +1236,9 @@ carousel-component {
 }
 .items-center {
   align-items: center;
+}
+.justify-center {
+  justify-content: center;
 }
 .prose .wp-block-table td {
   border: 1px dashed rgb(0 0 0 / 0.075);
@@ -1271,6 +1277,22 @@ carousel-component {
 .bg-dark {
   background-color: var(--color-dark);
 }
+.bg-dark\/80 {
+  background-color: var(--color-dark);
+}
+@supports (color: color-mix(in lab, red, red)) {
+  .bg-dark\/80 {
+    background-color: color-mix(in oklab, var(--color-dark) 80%, transparent);
+  }
+}
+.bg-dark\/90 {
+  background-color: var(--color-dark);
+}
+@supports (color: color-mix(in lab, red, red)) {
+  .bg-dark\/90 {
+    background-color: color-mix(in oklab, var(--color-dark) 90%, transparent);
+  }
+}
 .bg-foreground {
   background-color: var(--color-foreground);
 }
@@ -1290,6 +1312,14 @@ carousel-component {
 }
 .bg-tertiary {
   background-color: var(--color-tertiary);
+}
+.bg-tertiary\/80 {
+  background-color: var(--color-tertiary);
+}
+@supports (color: color-mix(in lab, red, red)) {
+  .bg-tertiary\/80 {
+    background-color: color-mix(in oklab, var(--color-tertiary) 80%, transparent);
+  }
 }
 .p-m {
   padding: var(--spacing-m);
@@ -1317,6 +1347,9 @@ carousel-component {
 }
 .py-xl {
   padding-block: var(--spacing-xl);
+}
+.py-xs {
+  padding-block: var(--spacing-xs);
 }
 .text-center {
   text-align: center;
