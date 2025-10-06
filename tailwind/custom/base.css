@@ -143,3 +143,8 @@ canvas {
 	background-size: cover;
 	shape-margin: 0.75rem;
 }
+
+.custom-logo {
+	display: block;
+	block-size: auto;
+}

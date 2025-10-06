@@ -19,9 +19,7 @@
 
 .nav__logo img,
 .custom-logo {
-	display: block;
 	max-width: 5rem;
-	block-size: auto;
 }
 
 .nav ul {

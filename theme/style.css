@@ -323,6 +323,10 @@ img, picture, svg, canvas {
   background-size: cover;
   shape-margin: 0.75rem;
 }
+.custom-logo {
+  display: block;
+  block-size: auto;
+}
 .page-title, .entry-title {
   margin-inline: auto;
   margin-bottom: calc(var(--spacing) * 6);
@@ -479,6 +483,9 @@ carousel-component {
     }
   }
 }
+.footer .custom-logo {
+  max-width: 10rem;
+}
 .nav {
   display: flex;
   justify-content: space-between;
@@ -496,9 +503,7 @@ carousel-component {
   max-width: 10ch;
 }
 .nav__logo img, .custom-logo {
-  display: block;
   max-width: 5rem;
-  block-size: auto;
 }
 .nav ul {
   display: flex;
@@ -1217,6 +1222,9 @@ carousel-component {
 .max-w-none {
   max-width: none;
 }
+.items-center {
+  align-items: center;
+}
 .prose .wp-block-table td {
   border: 0;
 }
@@ -1288,8 +1296,17 @@ carousel-component {
 .text-center {
   text-align: center;
 }
+.font-content {
+  font-family: var(--font-content);
+}
+.text-step-0 {
+  font-size: var(--text-step-0);
+}
 .text-background {
   color: var(--color-background);
+}
+.text-dark {
+  color: var(--color-dark);
 }
 .text-foreground {
   color: var(--color-foreground);

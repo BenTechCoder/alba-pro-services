@@ -288,3 +288,7 @@ add_action('wp_print_styles', 'deregister_gutenberg_styles', 100);
  */
 
 require get_template_directory() . '/inc/remove-comments.php';
+
+// Get custom Customizer Settings
+
+require get_template_directory() . '/inc/customizer.php';

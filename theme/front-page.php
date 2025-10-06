@@ -34,4 +34,10 @@ get_header();
 
 <?php get_template_part("template-parts/components/why-cta"); ?>
 
+<section class="grid" style="--grid-placement: auto-fit; --gutter: 0;">
+        <!-- <video src="http://localhost:10046/wp-content/uploads/2025/10/WhatsApp-Video-2025-09-29-at-12.00.56-PM.mp4"autoplay muted loop playsinline></video>
+        <video src="http://localhost:10046/wp-content/uploads/2025/10/WhatsApp-Video-2025-09-29-at-12.00.56-PM.mp4"autoplay muted loop playsinline></video>
+        <video src="http://localhost:10046/wp-content/uploads/2025/10/WhatsApp-Video-2025-09-29-at-12.00.56-PM.mp4"autoplay muted loop playsinline></video> -->
+</section>
+
 <?php get_footer(); ?>
