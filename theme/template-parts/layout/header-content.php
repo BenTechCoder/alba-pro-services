@@ -12,7 +12,6 @@
 <header id="masthead" class="">
 
 	<section class="bg-dark/90 text-light py-xs">
-		<script src="https://kit.fontawesome.com/ffa42396d3.js" crossorigin="anonymous"></script>
 		<div class="wrapper switcher text-center">
 			<?php if ($phone = get_theme_mod('business_phone')) : ?>
 				<div>

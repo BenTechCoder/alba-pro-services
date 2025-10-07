@@ -1,0 +1,22 @@
+nf-fields-wrap {
+	padding-top: var(--spacing-s);
+	display: grid;
+	grid-template-columns: repeat(
+		var(--grid-placement, auto-fill),
+		minmax(var(--grid-min-item-size, 16rem), 1fr)
+	);
+	gap: var(--gutter, var(--spacing-m));
+}
+
+nf-field input {
+	@apply border-light bg-light/40 rounded-sm border-solid;
+	padding: 0.4em;
+}
+
+nf-fields-wrap :last-child {
+	grid-column: span 1 / 2;
+}
+
+.contact[data-color="dark"] {
+	background-color: var(--color-primary);
+}
