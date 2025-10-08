@@ -457,6 +457,7 @@ carousel-component {
   outline: 2px solid var(--color-tertiary);
 }
 nf-fields-wrap {
+  --gutter: 0;
   padding-top: var(--spacing-s);
   display: grid;
   grid-template-columns: repeat(	var(--grid-placement, auto-fill),	minmax(var(--grid-min-item-size, 16rem), 1fr)	);
@@ -513,6 +514,14 @@ nf-fields-wrap :last-child {
 }
 .footer .custom-logo {
   max-width: 10rem;
+}
+.hero-background {
+  background-image: url("https://images.pexels.com/photos/5652626/pexels-photo-5652626.jpeg");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
 }
 .nav {
   display: flex;

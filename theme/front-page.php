@@ -12,15 +12,21 @@ get_header();
 
 
 ?>
-
-<section class="wrapper py-xl switcher">
-        <div class="stack">
-                <h1>Complete Exterior Cleaning Solutions</h1>
-                <p>Alba Pro Services, LLC is your go-to for expert exterior cleaning and maintenance. From power washing and gutter cleaning to fence staining, window washing, and comprehensive residential and commercial cleaning services, we deliver eco-friendly solutions with exceptional customer care and competitive pricing. Book your appointment today to see the difference we can make for your property!</p>
-                <a href="https://www.lebronconsulting.tech" class="btn bg-foreground text-background">Lebron Consulting</a>
-        </div>
-        <div class="contact p-m" data-color="dark"><?php get_template_part("template-parts/components/contact-form"); ?></div>
-</section>
+<div>
+        <div class="hero-background"></div>
+        <section class="wrapper py-xl">
+                <div class="stack text-light">
+                        <h1>Complete Exterior Cleaning Solutions</h1>
+                        <div class="switcher">
+                                <div class="stack">
+                                        <p>Alba Pro Services, LLC is your go-to for expert exterior cleaning and maintenance. From power washing and gutter cleaning to fence staining, window washing, and comprehensive residential and commercial cleaning services, we deliver eco-friendly solutions with exceptional customer care and competitive pricing. Book your appointment today to see the difference we can make for your property!</p>
+                                        <a href="https://www.lebronconsulting.tech" class="btn bg-foreground text-background">Lebron Consulting</a>
+                                </div>
+                                <div class="contact p-m text-dark" data-color="dark"><?php get_template_part("template-parts/components/contact-form"); ?></div>
+                        </div>
+                </div>
+        </section>
+</div>
 
 <?php get_template_part("template-parts/components/reviews/snippet"); ?>
 
@@ -31,9 +37,10 @@ get_header();
         <div class="py-l"><?php get_template_part('template-parts/components/carousel/carousel-container'); ?></div>
 </section>
 
-<?php // get_template_part("template-parts/components/service-area-cta", null, array('layout' => 'stack center center__recursive text-center')); ?>
+<?php // get_template_part("template-parts/components/service-area-cta", null, array('layout' => 'stack center center__recursive text-center')); 
+?>
 
-<?php get_template_part("template-parts/components/service-area-cta", null, array('layout' => 'sidebar')); ?> 
+<?php get_template_part("template-parts/components/service-area-cta", null, array('layout' => 'sidebar')); ?>
 
 <?php get_template_part("template-parts/components/why-cta"); ?>
 

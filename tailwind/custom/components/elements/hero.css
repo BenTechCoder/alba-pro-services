@@ -1,0 +1,8 @@
+.hero-background {
+	background-image: url("https://images.pexels.com/photos/5652626/pexels-photo-5652626.jpeg");
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: -1;
+}
