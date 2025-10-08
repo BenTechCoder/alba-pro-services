@@ -1,5 +1,28 @@
-nf-fields-wrap {
+.contact {
+	--gutter: 0.2em;
+}
+
+.contact:has([type="submit"]) {
+	@apply rounded-md p-s;
+}
+
+.contact-cta {
+	--grid-placement: auto-fit;
 	--gutter: 0;
+}
+
+.contact-cta .nf-form-cont {
+	background-color: var(--color-light);
+	padding: var(--spacing-m);
+}
+
+.contact-cta img {
+	height: 100%;
+	width: 100%;
+}
+
+nf-fields-wrap {
+	--gutter: var(--spacing-xs);
 	padding-top: var(--spacing-s);
 	display: grid;
 	grid-template-columns: repeat(
@@ -10,14 +33,30 @@ nf-fields-wrap {
 }
 
 nf-field input {
-	@apply border-light bg-light/40 rounded-sm border-solid;
+	color: var(--input-color);
+	background-color: var(--input-bg-color);
 	padding: 0.4em;
 }
 
+/* Last-child being the submit button */
 nf-fields-wrap :last-child {
 	grid-column: span 1 / 2;
 }
 
-.contact[data-color="dark"] {
-	background-color: var(--color-primary);
+/* Front-page */
+
+[data-color="primary"] {
+	--input-bg-color: var(--color-light);
+	--input-color: var(--color-dark);
+}
+
+/* Contact Page */
+
+[data-color="light"] {
+	--input-bg-color: var(--color-tertiary);
+	--input-color: var(--color-light);
+}
+
+[data-color="light"] [type="submit"] {
+	color: var(--color-light);
 }

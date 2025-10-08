@@ -32,7 +32,6 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
   --text-3xl: 1.875rem;
   --text-3xl--line-height: calc(2.25 / 1.875);
   --font-weight-extrabold: 800;
-  --radius-sm: 0.25rem;
   --radius-md: 0.375rem;
   --default-font-family: var(--font-sans);
   --default-mono-font-family: var(--font-mono);
@@ -456,33 +455,50 @@ carousel-component {
 .carousel-prev:focus, .carousel-next:focus {
   outline: 2px solid var(--color-tertiary);
 }
-nf-fields-wrap {
+.contact {
+  --gutter: 0.2em;
+}
+.contact:has([type="submit"]) {
+  border-radius: var(--radius-md);
+  padding: var(--spacing-s);
+}
+.contact-cta {
+  --grid-placement: auto-fit;
   --gutter: 0;
+}
+.contact-cta .nf-form-cont {
+  background-color: var(--color-light);
+  padding: var(--spacing-m);
+}
+.contact-cta img {
+  height: 100%;
+  width: 100%;
+}
+nf-fields-wrap {
+  --gutter: var(--spacing-xs);
   padding-top: var(--spacing-s);
   display: grid;
   grid-template-columns: repeat(	var(--grid-placement, auto-fill),	minmax(var(--grid-min-item-size, 16rem), 1fr)	);
   gap: var(--gutter, var(--spacing-m));
 }
 nf-field input {
-  border-radius: var(--radius-sm);
-  --tw-border-style: solid;
-  border-style: solid;
-  border-color: var(--color-light);
-  background-color: var(--color-light);
-}
-@supports (color: color-mix(in lab, red, red)) {
-  nf-field input {
-    background-color: color-mix(in oklab, var(--color-light) 40%, transparent);
-  }
-}
-nf-field input {
+  color: var(--input-color);
+  background-color: var(--input-bg-color);
   padding: 0.4em;
 }
 nf-fields-wrap :last-child {
   grid-column: span 1 / 2;
 }
-.contact[data-color="dark"] {
-  background-color: var(--color-primary);
+[data-color="primary"] {
+  --input-bg-color: var(--color-light);
+  --input-color: var(--color-dark);
+}
+[data-color="light"] {
+  --input-bg-color: var(--color-tertiary);
+  --input-color: var(--color-light);
+}
+[data-color="light"] [type="submit"] {
+  color: var(--color-light);
 }
 .why-cta svg {
   block-size: 4ex;
@@ -1262,6 +1278,9 @@ nf-fields-wrap :last-child {
 .grid {
   display: grid;
 }
+.hidden {
+  display: none;
+}
 .max-w-full {
   max-width: 100%;
 }
@@ -1336,6 +1355,14 @@ nf-fields-wrap :last-child {
 .bg-tertiary {
   background-color: var(--color-tertiary);
 }
+.bg-tertiary\/80 {
+  background-color: var(--color-tertiary);
+}
+@supports (color: color-mix(in lab, red, red)) {
+  .bg-tertiary\/80 {
+    background-color: color-mix(in oklab, var(--color-tertiary) 80%, transparent);
+  }
+}
 .p-m {
   padding: var(--spacing-m);
 }
@@ -1359,6 +1386,9 @@ nf-fields-wrap :last-child {
 }
 .py-m {
   padding-block: var(--spacing-m);
+}
+.py-s {
+  padding-block: var(--spacing-s);
 }
 .py-xl {
   padding-block: var(--spacing-xl);
@@ -1445,6 +1475,11 @@ nf-fields-wrap :last-child {
   --tw-prose-invert-pre-bg: rgb(0 0 0 / 50%);
   --tw-prose-invert-th-borders: oklch(43.9% 0 0);
   --tw-prose-invert-td-borders: oklch(37.1% 0 0);
+}
+@media (width >= 48rem) {
+  .md\:block {
+    display: block;
+  }
 }
 .prose-a\:text-primary :is(:where(a):not(:where([class~="not-prose"],[class~="not-prose"] *,[class~="acf-block-body"]:not([class~="acf-block-preview"]) *))) {
   color: var(--color-primary);

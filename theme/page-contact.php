@@ -22,7 +22,7 @@ get_header();
             Fill out the contact form below or give us a call, and our friendly team will get back to you promptly. Let us help you keep your property looking its best!</p>
     </div>
 </section>
-<div class="grid">
+<section class="contact-cta grid py-s">
     <article class="stack bg-tertiary p-xl">
         <h2>Service Areas</h2>
         <p>
@@ -50,7 +50,8 @@ get_header();
         <?php get_template_part("template-parts/components/social-media-list"); ?>
 
     </article>
-    <div><?php get_template_part("template-parts/components/contact-form"); ?></div>
-    <img src="https://static.wixstatic.com/media/bccb7dec5d8846a4800d10a140a02d84.jpg/v1/fill/w_640,h_572,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bccb7dec5d8846a4800d10a140a02d84.jpg" alt="Pressure Washer on Stairs" width="320" height="286" data-ssr-src-done="true" fetchpriority="high">
-</div>
+    <div class="contact bg-tertiary/80 p-s" data-color="light"><?php get_template_part("template-parts/components/contact-form"); ?></div>
+    <img class="hidden md:block" src="https://static.wixstatic.com/media/bccb7dec5d8846a4800d10a140a02d84.jpg/v1/fill/w_640,h_572,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/bccb7dec5d8846a4800d10a140a02d84.jpg" alt="Pressure Washer on Stairs" width="320" height="286" data-ssr-src-done="true" fetchpriority="high">
+    </div>
+</section>
 <?php get_footer(); ?>
