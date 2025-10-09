@@ -16,10 +16,7 @@ get_header();
 <section class="wrapper py-xl">
     <div class="stack text-center center">
         <h1><?php echo get_the_title(); ?></h1>
-        <p>Have questions or ready to schedule your exterior cleaning service? We're here to help!
-            At Alba Pro Services, LLC, we’re committed to providing exceptional service to homes and businesses in Raleigh, Cary, Durham, Apex, Chapel Hill, Mooresville, Hillsborough, and beyond. Whether you need power washing, gutter cleaning, or deck staining, we’d love to hear from you.
-
-            Fill out the contact form below or give us a call, and our friendly team will get back to you promptly. Let us help you keep your property looking its best!</p>
+        <?php the_content(); ?>
     </div>
 </section>
 <section class="contact-cta grid py-s">

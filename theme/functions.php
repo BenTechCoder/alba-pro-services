@@ -122,7 +122,6 @@ if (! function_exists('_tw_setup')) :
 
 		// Add support for Custom Logo in Customizer
 		add_theme_support('custom-logo');
-
 	}
 endif;
 add_action('after_setup_theme', '_tw_setup');
@@ -292,3 +291,7 @@ require get_template_directory() . '/inc/remove-comments.php';
 // Get custom Customizer Settings
 
 require get_template_directory() . '/inc/customizer.php';
+
+// add excerpt support to pages
+
+add_post_type_support('page', 'excerpt');

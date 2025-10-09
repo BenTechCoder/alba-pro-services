@@ -1,9 +1,10 @@
 .contact {
 	--gutter: 0.2em;
+	max-width: 65ch;
 }
 
 .contact:has([type="submit"]) {
-	@apply rounded-md p-s;
+	@apply p-s rounded-md;
 }
 
 .contact-cta {
