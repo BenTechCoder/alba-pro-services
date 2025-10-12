@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * The Homepage
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package _tw
+ */
+
+get_header();
+
+
+?>
+
+<section class="wrapper py-xl">
+    <div class="stack">
+        <h1><?php echo get_the_title(); ?></h1>
+        <?php the_content(); ?>
+    </div>
+</section>
+
+<section class="py-xl bg-tertiary">
+    <div class="gallery grid wrapper">
+        <?php
+        $args = array(
+            'post_type'  => 'gallery',
+            // Several more arguments could go here. Last one without a comma.
+        );
+
+        // Query the posts:
+        $gallery_query = new WP_Query($args);
+
+        // Loop through the Service:
+        while ($gallery_query->have_posts()) :
+            $gallery_query->the_post();
+            $gallery_is_single_image = get_post_meta($post->ID, 'is_single_image');
+            $gallery_service = get_post_meta($post->ID, 'gallery_service')[0];
+            $gallery_single_image = (get_post_meta($post->ID, 'gallery_single_image')) ? get_post_meta($post->ID, 'gallery_single_image')[0] : "";
+            $gallery_before_image = (get_post_meta($post->ID, 'gallery_before_image')) ? get_post_meta($post->ID, 'gallery_before_image')[0] : "";
+            $gallery_after_image = (get_post_meta($post->ID, 'gallery_after_image')) ? get_post_meta($post->ID, 'gallery_after_image')[0] : "";
+
+            $before_after_config = array(
+                'type' => 'before_after',
+                'service' => $gallery_service,
+                'before_image' => $gallery_before_image,
+                'after_image' => $gallery_after_image,
+            );
+            if (!$gallery_is_single_image) {
+                get_template_part("template-parts/components/gallery/gallery-item", null, array(
+                    'title' => 'Before ' . get_the_title(),
+                    'image' => $gallery_before_image,
+                ));
+                get_template_part("template-parts/components/gallery/gallery-item", null, array(
+                    'title' => 'After ' . get_the_title(),
+                    'image' => $gallery_after_image,
+                ));
+            } else {
+                get_template_part("template-parts/components/gallery/gallery-item", null, array(
+                    'title' => get_the_title(),
+                    'image' => $gallery_single_image,
+                ));
+            }
+
+        endwhile;
+
+        // Reset Post Data
+        wp_reset_postdata();
+        ?>
+
+    </div>
+</section>
+
+
+<?php get_footer(); ?>

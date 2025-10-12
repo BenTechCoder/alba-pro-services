@@ -460,6 +460,7 @@ carousel-component {
 }
 .contact {
   --gutter: 0.2em;
+  max-width: 65ch;
 }
 .contact:has([type="submit"]) {
   border-radius: var(--radius-md);
