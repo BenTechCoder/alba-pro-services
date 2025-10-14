@@ -1,3 +1,7 @@
+:root:has(.lightbox[open]) {
+  overflow: clip;
+}
+
 .lightbox {
 	width: calc(100vw - 1rem);
 	height: calc(100vh - 1rem);
@@ -10,11 +14,12 @@
 
 .lightbox-grid {
 	display: grid;
-    grid-template-columns: 1fr;
+	grid-template-columns: 1fr;
 	grid-template-areas:
 		"image"
 		"controls";
 	height: 100%;
+	place-content: center center;
 }
 
 .lightbox-controls {
@@ -22,16 +27,39 @@
 	align-self: center;
 }
 
+.lightbox-controls__interior {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: var(--spacing-xs);
+}
+
 .lightbox img {
 	margin: 0 auto;
 	grid-area: image;
 	max-height: 95vh;
-    align-self: center;
+	width: inherit;
+	align-self: center;
 }
 
 @media screen and (min-width: theme(screens.md)) {
 	.lightbox-grid {
-        grid-template-columns: 1fr minmax(15ch, 25ch);
+		grid-template-columns: 1fr minmax(15ch, 25ch);
 		grid-template-areas: "image controls";
 	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lightbox[open] {
+    animation: show 0.25s ease-in-out normal;
+  }
+
+  @keyframes show {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }

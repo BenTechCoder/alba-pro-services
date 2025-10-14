@@ -8,11 +8,11 @@ export default function createDialogs(selector) {
 	const galleryItems = Array.from(document.querySelectorAll(selector));
 	const dialog = document.querySelector('.lightbox');
 	const dialogInterior = dialog.querySelector('.lightbox-controls');
-	const controls = dialog.querySelectorAll('.lightbox-controls > *');
+	const controls = dialog.querySelectorAll('.lightbox-controls__interior > *');
 	const title = dialog.querySelector(
 		'form .lightbox-controls > .lightbox-alt'
 	);
-	const [dialogTitle, exitBtn, forwardBtn, backwardsBtn, fullScreenBtn] =
+	const [exitBtn, fullScreenBtn, forwardBtn, backwardsBtn] =
 		controls;
 	let startingIndex = 0;
 
