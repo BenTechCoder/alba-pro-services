@@ -10,11 +10,15 @@
  */
 import BurgerMenu from './components/nav';
 import CarouselComponent from './components/carousel';
+import createDialogs from './components/gallery';
 
 if ('customElements' in window) {
 	customElements.define('burger-menu', BurgerMenu);
 	customElements.define('carousel-component', CarouselComponent);
 }
+
+createDialogs('.gallery-item');
+
 // Reel layout
 
 (function () {

@@ -535,6 +535,41 @@ nf-fields-wrap :last-child {
 .footer .custom-logo {
   max-width: 10rem;
 }
+.lightbox {
+  width: calc(100vw - 1rem);
+  height: calc(100vh - 1rem);
+  margin: 0 auto;
+}
+.lightbox::backdrop {
+  background-color: var(--color-light);
+}
+@supports (color: color-mix(in lab, red, red)) {
+  .lightbox::backdrop {
+    background-color: color-mix(in oklab, var(--color-light) 70%, transparent);
+  }
+}
+.lightbox-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "image"	"controls";
+  height: 100%;
+}
+.lightbox-controls {
+  grid-area: controls;
+  align-self: center;
+}
+.lightbox img {
+  margin: 0 auto;
+  grid-area: image;
+  max-height: 95vh;
+  align-self: center;
+}
+@media screen and (min-width: 48rem) {
+  .lightbox-grid {
+    grid-template-columns: 1fr minmax(15ch, 25ch);
+    grid-template-areas: "image controls";
+  }
+}
 .hero-background {
   background-image: url("https://images.pexels.com/photos/5652626/pexels-photo-5652626.jpeg");
   background-size: cover;
@@ -704,6 +739,24 @@ nf-fields-wrap :last-child {
   gap: var(--spacing, var(--spacing-s));
   justify-content: flex-start;
   align-items: center;
+}
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh;
+  padding: 0;
+}
+.cover > * {
+  margin-block: 1rem;
+}
+.cover > :first-child:not(img) {
+  margin-block-start: 0;
+}
+.cover > :last-child:not(img) {
+  margin-block-end: 0;
+}
+.cover > img {
+  margin-block: auto;
 }
 .grid {
   display: grid;
@@ -1288,6 +1341,10 @@ nf-fields-wrap :last-child {
 .hidden {
   display: none;
 }
+.size-full {
+  width: 100%;
+  height: 100%;
+}
 .max-w-full {
   max-width: 100%;
 }
@@ -1344,6 +1401,14 @@ nf-fields-wrap :last-child {
 }
 .bg-foreground {
   background-color: var(--color-foreground);
+}
+.bg-light\/70 {
+  background-color: var(--color-light);
+}
+@supports (color: color-mix(in lab, red, red)) {
+  .bg-light\/70 {
+    background-color: color-mix(in oklab, var(--color-light) 70%, transparent);
+  }
 }
 .bg-primary {
   background-color: var(--color-primary);
@@ -1409,8 +1474,17 @@ nf-fields-wrap :last-child {
 .font-content {
   font-family: var(--font-content);
 }
+.font-display {
+  font-family: var(--font-display);
+}
 .text-step-0 {
   font-size: var(--text-step-0);
+}
+.text-step-3 {
+  font-size: var(--text-step-3);
+}
+.text-step-5 {
+  font-size: var(--text-step-5);
 }
 .text-background {
   color: var(--color-background);

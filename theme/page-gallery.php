@@ -67,7 +67,22 @@ get_header();
         // Reset Post Data
         wp_reset_postdata();
         ?>
-
+        <dialog class="lightbox" closedby="none">
+            <form method="dialog" class="lightbox-grid bg-light/70">
+                <!-- <img width="662" height="632" src="http://localhost:10046/wp-content/uploads/2025/10/Patio-After_edited.avif" class="attachment-full size-full" alt="After: Patio with shiny and clean concrete" decoding="async" srcset="http://localhost:10046/wp-content/uploads/2025/10/Patio-After_edited.avif 662w, http://localhost:10046/wp-content/uploads/2025/10/Patio-After_edited-300x286.avif 300w" sizes="(max-width: 662px) 100vw, 662px">
+                     -->
+                <div class="lightbox-controls stack">
+                    <span aria-hidden="" class="lightbox-alt text-step-3 font-display"></span>
+                    <button type="submit" class="lightbox-close btn">
+                        <span aria-hidden="" class="text-step-5">×</span>
+                        <span class="sr-only">Close dialog</span>
+                    </button>
+                    <button type="button" class="lightbox-forward btn">Next Image</button>
+                    <button type="button" class="lightbox-backwards btn">Previous Image</button>
+                    <button type="button" class="lightbox-fullscreen btn">Fullscreen</button>
+                </div>
+            </form>
+        </dialog>
     </div>
 </section>
 

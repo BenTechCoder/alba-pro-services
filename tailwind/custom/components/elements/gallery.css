@@ -1,0 +1,37 @@
+.lightbox {
+	width: calc(100vw - 1rem);
+	height: calc(100vh - 1rem);
+	margin: 0 auto;
+}
+
+.lightbox::backdrop {
+	@apply bg-light/70;
+}
+
+.lightbox-grid {
+	display: grid;
+    grid-template-columns: 1fr;
+	grid-template-areas:
+		"image"
+		"controls";
+	height: 100%;
+}
+
+.lightbox-controls {
+	grid-area: controls;
+	align-self: center;
+}
+
+.lightbox img {
+	margin: 0 auto;
+	grid-area: image;
+	max-height: 95vh;
+    align-self: center;
+}
+
+@media screen and (min-width: theme(screens.md)) {
+	.lightbox-grid {
+        grid-template-columns: 1fr minmax(15ch, 25ch);
+		grid-template-areas: "image controls";
+	}
+}
