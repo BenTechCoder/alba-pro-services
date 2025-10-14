@@ -539,6 +539,7 @@ nf-fields-wrap :last-child {
   overflow: clip;
 }
 .lightbox {
+  --grid-min-item-size: 15em;
   width: calc(100vw - 1rem);
   height: calc(100vh - 1rem);
   margin: 0 auto;
