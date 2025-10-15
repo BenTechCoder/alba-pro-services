@@ -20,7 +20,7 @@ get_header();
                         <div class="switcher">
                                 <div class="stack">
                                         <p>Alba Pro Services, LLC is your go-to for expert exterior cleaning and maintenance. From power washing and gutter cleaning to fence staining, window washing, and comprehensive residential and commercial cleaning services, we deliver eco-friendly solutions with exceptional customer care and competitive pricing. Book your appointment today to see the difference we can make for your property!</p>
-                                        <a href="https://www.lebronconsulting.tech" class="btn bg-foreground text-background">Lebron Consulting</a>
+                                        <a href="/contact/" class="btn bg-foreground text-background">Get a Free Quote</a>
                                 </div>
                                 <div class="contact p-m bg-primary text-dark" data-color="primary"><?php get_template_part("template-parts/components/contact-form"); ?></div>
                         </div>
