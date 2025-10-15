@@ -583,8 +583,12 @@ nf-fields-wrap :last-child {
   }
 }
 @media (prefers-reduced-motion: no-preference) {
+  .lightbox {
+    transition: display 0.25s allow-discrete,	overlay 0.25s allow-discrete;
+    animation: hide 0.25s ease-in-out normal;
+  }
   .lightbox[open] {
-    animation: show 0.25s ease-in-out normal;
+    animation: show 0.25s forwards;
   }
   @keyframes show {
     from {
@@ -592,6 +596,14 @@ nf-fields-wrap :last-child {
     }
     to {
       opacity: 1;
+    }
+  }
+  @keyframes hide {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
     }
   }
 }

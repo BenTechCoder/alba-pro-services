@@ -1,5 +1,5 @@
 :root:has(.lightbox[open]) {
-  overflow: clip;
+	overflow: clip;
 }
 
 .lightbox {
@@ -51,16 +51,33 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .lightbox[open] {
-    animation: show 0.25s ease-in-out normal;
-  }
+	.lightbox {
+		transition:
+			display 0.25s allow-discrete,
+			overlay 0.25s allow-discrete;
 
-  @keyframes show {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+		animation: hide 0.25s ease-in-out normal;
+	}
+
+	.lightbox[open] {
+		animation: show 0.25s forwards;
+	}
+
+	@keyframes show {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes hide {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	}
 }
