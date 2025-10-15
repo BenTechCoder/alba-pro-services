@@ -40,7 +40,7 @@ get_header();
 <?php // get_template_part("template-parts/components/service-area-cta", null, array('layout' => 'stack center center__recursive text-center')); 
 ?>
 
-<?php get_template_part("template-parts/components/service-area-cta", null, array('layout' => 'sidebar')); ?>
+<?php get_template_part("template-parts/components/service-area-cta", null, array('layout' => 'switcher items-center')); ?>
 
 <?php get_template_part("template-parts/components/why-cta"); ?>
 
