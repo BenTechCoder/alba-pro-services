@@ -11,6 +11,11 @@
 import BurgerMenu from './components/nav';
 import CarouselComponent from './components/carousel';
 import createDialogs from './components/gallery';
+import shareBtn from './components/share';
+
+document.querySelectorAll('.btn-share').forEach(
+(item) => item.addEventListener('click', () => shareBtn(item))
+)
 
 if ('customElements' in window) {
 	customElements.define('burger-menu', BurgerMenu);

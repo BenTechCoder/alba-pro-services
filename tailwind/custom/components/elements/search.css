@@ -1,0 +1,14 @@
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: var(--spacing-s);
+}
+
+.search-submit {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    padding: var(--spacing-xs);
+}

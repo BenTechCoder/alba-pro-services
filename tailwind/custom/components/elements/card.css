@@ -45,3 +45,12 @@
 	pointer-events: none; /* Ensures the overlay doesn't block interactions with the image */
 	will-change: background;
 }
+
+[data-card="blog"] .attachment-post-thumbnail {
+	width: 100%;
+	height: 100%;
+}
+
+[data-card="blog"] {
+	--avatar-size: 2rem;
+}

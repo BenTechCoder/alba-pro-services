@@ -1,8 +1,9 @@
 // Special thanks to https://polypane.app/blog/building-a-lightbox-with-the-dialog-element/
 
 export default function createDialogs(selector) {
-	if (!selector) {
-		return console.error('Missing selector argument');
+	if (!document.querySelector(selector)) {
+		// No gallery on page
+		return;
 	}
 	const gallery = document.querySelector('.gallery');
 	const galleryItems = Array.from(document.querySelectorAll(selector));

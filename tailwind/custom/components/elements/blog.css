@@ -1,0 +1,9 @@
+.attachment-post-thumbnail {
+    aspect-ratio: 16/9;
+}
+
+.avatar {
+    width: var(--avatar-size, 2rem);
+    height: var(--avatar-size, 2rem);
+    @apply rounded-3xl;
+}

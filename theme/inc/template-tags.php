@@ -14,7 +14,7 @@ if ( ! function_exists( '_tw_posted_on' ) ) :
 	function _tw_posted_on() {
 		$time_string = '<time datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time datetime="%1$s">%2$s</time><time datetime="%3$s">%4$s</time>';
+			$time_string = 'Last Updated • <time datetime="%3$s">%4$s</time>';
 		}
 
 		$time_string = sprintf(
@@ -38,9 +38,10 @@ if ( ! function_exists( '_tw_posted_by' ) ) :
 	 * Prints HTML with meta information about theme author.
 	 */
 	function _tw_posted_by() {
+		// '<span class="sr-only">%1$s</span><span class="author vcard"><a class="url fn n" href="%2$s">%3$s</a></span>',
 		printf(
 		/* translators: 1: posted by label, only visible to screen readers. 2: author link. 3: post author. */
-			'<span class="sr-only">%1$s</span><span class="author vcard"><a class="url fn n" href="%2$s">%3$s</a></span>',
+			'<span class="sr-only">%1$s</span><span><p>%3$s</p></span>',
 			esc_html__( 'Posted by', '_tw' ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_html( get_the_author() )
@@ -77,26 +78,26 @@ if ( ! function_exists( '_tw_entry_meta' ) ) :
 			_tw_posted_on();
 
 			/* translators: used between list items, there is a space after the comma. */
-			$categories_list = get_the_category_list( __( ', ', '_tw' ) );
-			if ( $categories_list ) {
-				printf(
-				/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
-					'<span class="sr-only">%1$s</span>%2$s',
-					esc_html__( 'Posted in', '_tw' ),
-					$categories_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				);
-			}
+			// $categories_list = get_the_category_list( __( ', ', '_tw' ) );
+			// if ( $categories_list ) {
+			// 	printf(
+			// 	/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
+			// 		'<span class="sr-only">%1$s</span>%2$s',
+			// 		esc_html__( 'Posted in', '_tw' ),
+			// 		$categories_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			// 	);
+			// }
 
 			/* translators: used between list items, there is a space after the comma. */
-			$tags_list = get_the_tag_list( '', __( ', ', '_tw' ) );
-			if ( $tags_list ) {
-				printf(
-				/* translators: 1: tags label, only visible to screen readers. 2: list of tags. */
-					'<span class="sr-only">%1$s</span>%2$s',
-					esc_html__( 'Tags:', '_tw' ),
-					$tags_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				);
-			}
+			// $tags_list = get_the_tag_list( '', __( ', ', '_tw' ) );
+			// if ( $tags_list ) {
+			// 	printf(
+			// 	/* translators: 1: tags label, only visible to screen readers. 2: list of tags. */
+			// 		'<span class="sr-only">%1$s</span>%2$s',
+			// 		esc_html__( 'Tags:', '_tw' ),
+			// 		$tags_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			// 	);
+			// }
 		}
 
 		// Comment count.
@@ -105,20 +106,20 @@ if ( ! function_exists( '_tw_entry_meta' ) ) :
 		}
 
 		// Edit post link.
-		edit_post_link(
-			sprintf(
-				wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers. */
-					__( 'Edit <span class="sr-only">%s</span>', '_tw' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
+		// edit_post_link(
+		// 	sprintf(
+		// 		wp_kses(
+		// 		/* translators: %s: Name of current post. Only visible to screen readers. */
+		// 			__( 'Edit <span class="sr-only">%s</span>', '_tw' ),
+		// 			array(
+		// 				'span' => array(
+		// 					'class' => array(),
+		// 				),
+		// 			)
+		// 		),
+		// 		get_the_title()
+		// 	)
+		// );
 	}
 endif;
 

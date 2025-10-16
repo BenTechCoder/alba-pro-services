@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all pages
  *
@@ -13,28 +14,27 @@
 
 get_header();
 ?>
+<header class="wrapper py-xl">
+	<h1><?php echo get_the_title(); ?></h1>
+</header>
+<section id="primary">
+		<?php
+		/* Start the Loop */
+		while (have_posts()) :
+			the_post();
 
-	<section id="primary">
-		<main id="main">
+			get_template_part('template-parts/content/content', 'page');
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			// If comments are open, or we have at least one comment, load
+			// the comment template.
+			if (comments_open() || get_comments_number()) {
+				comments_template();
+			}
 
-				get_template_part( 'template-parts/content/content', 'page' );
+		endwhile; // End of the loop.
+		?>
 
-				// If comments are open, or we have at least one comment, load
-				// the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
-
-			endwhile; // End of the loop.
-			?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
+</section><!-- #primary -->
 
 <?php
 get_footer();
