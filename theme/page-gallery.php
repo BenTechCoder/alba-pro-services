@@ -34,7 +34,7 @@ get_header();
         // Loop through the Service:
         while ($gallery_query->have_posts()) :
             $gallery_query->the_post();
-            $gallery_is_single_image = get_post_meta($post->ID, 'is_single_image');
+            $gallery_is_single_image = (int) get_post_meta($post->ID, 'is_single_image')[0];
             $gallery_service = get_post_meta($post->ID, 'gallery_service')[0];
             $gallery_single_image = (get_post_meta($post->ID, 'gallery_single_image')) ? get_post_meta($post->ID, 'gallery_single_image')[0] : "";
             $gallery_before_image = (get_post_meta($post->ID, 'gallery_before_image')) ? get_post_meta($post->ID, 'gallery_before_image')[0] : "";
@@ -46,7 +46,7 @@ get_header();
                 'before_image' => $gallery_before_image,
                 'after_image' => $gallery_after_image,
             );
-            if (!$gallery_is_single_image) {
+            if ($gallery_is_single_image === 0) {
                 get_template_part("template-parts/components/gallery/gallery-item", null, array(
                     'title' => 'Before ' . get_the_title(),
                     'image' => $gallery_before_image,
@@ -73,7 +73,7 @@ get_header();
                      -->
                 <div class="lightbox-controls stack p-m">
                     <span aria-hidden="" class="lightbox-alt text-step-3 font-display"></span>
-                   <div class="lightbox-controls__interior">
+                    <div class="lightbox-controls__interior">
                         <button type="submit" class="lightbox-close btn bg-dark text-light">
                             <span aria-hidden="">Close</span>
                             <span class="sr-only">Close dialog</span>
@@ -81,7 +81,7 @@ get_header();
                         <button type="button" class="lightbox-fullscreen btn bg-dark text-light">Fullscreen</button>
                         <button type="button" class="lightbox-forward btn bg-dark text-light">Next</button>
                         <button type="button" class="lightbox-backwards btn bg-dark text-light">Previous</button>
-                   </div>
+                    </div>
                 </div>
             </form>
         </dialog>

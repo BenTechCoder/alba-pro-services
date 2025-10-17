@@ -14,7 +14,7 @@
         while ($gallery_query->have_posts()) :
             $gallery_query->the_post();
 
-            $gallery_is_single_image = get_post_meta($post->ID, 'is_single_image');
+            $gallery_is_single_image = (int) get_post_meta($post->ID, 'is_single_image')[0];
             $gallery_service = get_post_meta($post->ID, 'gallery_service')[0];
             $gallery_before_image = (get_post_meta($post->ID, 'gallery_before_image')) ? get_post_meta($post->ID, 'gallery_before_image')[0] : "";
             $gallery_after_image = (get_post_meta($post->ID, 'gallery_after_image')) ? get_post_meta($post->ID, 'gallery_after_image')[0] : "";
@@ -24,7 +24,9 @@
                 'before_image' => $gallery_before_image,
                 'after_image' => $gallery_after_image,
             );
-            if (!$gallery_is_single_image) {
+
+            if ($gallery_is_single_image === 0) {
+
                 get_template_part('template-parts/components/carousel/before-after-item', null, $carousel_config);
             }
 
