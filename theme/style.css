@@ -378,6 +378,9 @@ img, picture, svg, canvas {
   margin: unset;
   cursor: pointer;
 }
+.btn-share:hover {
+  cursor: pointer;
+}
 [data-card="services"] img {
   aspect-ratio: 16/9;
   width: 100%;

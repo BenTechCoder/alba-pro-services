@@ -72,15 +72,24 @@ get_header();
                 <!-- <img width="662" height="632" src="http://localhost:10046/wp-content/uploads/2025/10/Patio-After_edited.avif" class="attachment-full size-full" alt="After: Patio with shiny and clean concrete" decoding="async" srcset="http://localhost:10046/wp-content/uploads/2025/10/Patio-After_edited.avif 662w, http://localhost:10046/wp-content/uploads/2025/10/Patio-After_edited-300x286.avif 300w" sizes="(max-width: 662px) 100vw, 662px">
                      -->
                 <div class="lightbox-controls stack p-m">
-                    <span aria-hidden="" class="lightbox-alt text-step-3 font-display"></span>
+                    <span class="lightbox-alt text-step-3 font-display"></span>
                     <div class="lightbox-controls__interior">
                         <button type="submit" class="lightbox-close btn bg-dark text-light">
-                            <span aria-hidden="">Close</span>
+                            <span aria-hidden="true"><i class="fa-solid fa-xmark"></i></span>
                             <span class="sr-only">Close dialog</span>
                         </button>
-                        <button type="button" class="lightbox-fullscreen btn bg-dark text-light">Fullscreen</button>
-                        <button type="button" class="lightbox-forward btn bg-dark text-light">Next</button>
-                        <button type="button" class="lightbox-backwards btn bg-dark text-light">Previous</button>
+                        <button type="button" class="lightbox-fullscreen btn bg-dark text-light">
+                            <span class="sr-only">Fullscreen</span>
+                            <span aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                        </button>
+                        <button type="button" class="lightbox-backwards btn bg-dark text-light">
+                            <span class="sr-only">Previous</span>
+                            <span aria-hidden="true"><i class="fa-solid fa-arrow-left"></i></span>
+                        </button>
+                        <button type="button" class="lightbox-forward btn bg-dark text-light">
+                            <span class="sr-only">Next</span>
+                            <span aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+                        </button>
                     </div>
                 </div>
             </form>

@@ -16,3 +16,7 @@
 	border-bottom: 4px solid var(--hover-color, theme(colors.dark));
 	border-right: 4px solid var(--hover-color, theme(colors.dark));
 } */
+
+.btn-share:hover {
+	cursor: pointer;
+}
