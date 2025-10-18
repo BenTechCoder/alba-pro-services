@@ -66,18 +66,7 @@ export default function createDialogs(selector) {
 	forwardBtn.addEventListener('click', nextImage);
 	backwardsBtn.addEventListener('click', previousImage);
 	fullScreenBtn.addEventListener('click', fullScreenImage);
-
-	function createDialog(img, index) {
-		const button = img.querySelector('.lightbox-button');
-		button.addEventListener('click', () => {
-			// set the current index and update the dialog preview
-			startingIndex = index;
-			updateDialog(index);
-			dialog.showModal();
-			// ensure dialog can receive keyboard events
-			dialog.focus();
-		});
-
+	
 		dialog.addEventListener('click', (event) => {
 			if (event.target === dialog) return dialog.close();
 		});
@@ -86,11 +75,9 @@ export default function createDialogs(selector) {
 		dialog.addEventListener('keydown', (e) => {
 			switch (e.key) {
 				case 'ArrowRight':
-					e.preventDefault();
 					nextImage();
 					break;
 				case 'ArrowLeft':
-					e.preventDefault();
 					previousImage();
 					break;
 				case 'Escape':
@@ -105,6 +92,17 @@ export default function createDialogs(selector) {
 				'[data-lightbox-preview]'
 			);
 			if (previousPreview) previousPreview.remove();
+		});
+
+	function createDialog(img, index) {
+		const button = img.querySelector('.lightbox-button');
+		button.addEventListener('click', () => {
+			// set the current index and update the dialog preview
+			startingIndex = index;
+			updateDialog(index);
+			dialog.showModal();
+			// ensure dialog can receive keyboard events
+			dialog.focus();
 		});
 	}
 

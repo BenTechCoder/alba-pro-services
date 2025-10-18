@@ -32,7 +32,7 @@ get_header();
 
 <?php get_template_part("template-parts/components/services/services-container"); ?>
 
-<section class="stack wrapper py-xl">
+<section class="stack py-xl">
         <h2 class="center text-center">Before & After</h2>
         <div class="py-l"><?php get_template_part('template-parts/components/carousel/carousel-container'); ?></div>
 </section>
