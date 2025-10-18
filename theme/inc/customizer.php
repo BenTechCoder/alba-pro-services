@@ -55,3 +55,148 @@ function mytheme_customize_register($wp_customize)
     ));
 }
 add_action('customize_register', 'mytheme_customize_register');
+
+/**
+ * Sanitize background-position option
+ */
+function mytheme_sanitize_bg_position($input)
+{
+    $valid = array(
+        'left top',
+        'left center',
+        'left bottom',
+        'center top',
+        'center center',
+        'center bottom',
+        'right top',
+        'right center',
+        'right bottom',
+    );
+
+    if (in_array($input, $valid, true)) {
+        return $input;
+    }
+
+    return 'center center';
+}
+
+function mytheme_sanitize_bg_position_x($input)
+{
+    $valid = array('left', 'center', 'right');
+    return in_array($input, $valid, true) ? $input : 'center';
+}
+
+function mytheme_sanitize_bg_position_y($input)
+{
+    $valid = array('top', 'center', 'bottom');
+    return in_array($input, $valid, true) ? $input : 'center';
+}
+
+/**
+ * Sanitize image URL
+ */
+function mytheme_sanitize_image_url($url)
+{
+    return esc_url_raw($url);
+}
+
+/**
+ * Add front page settings and controls (panel -> section -> settings)
+ */
+function mytheme_customize_frontpage($wp_customize)
+{
+    // Create a panel specifically for front page options
+    $wp_customize->add_panel('frontpage_panel', array(
+        'title'       => __('Front Page', 'mytheme'),
+        'description' => __('Settings for the front page', 'mytheme'),
+        'priority'    => 160,
+    ));
+
+    // Section inside the panel
+    $wp_customize->add_section('frontpage_hero_section', array(
+        'title'    => __('Hero Background', 'mytheme'),
+        'panel'    => 'frontpage_panel',
+        'priority' => 10,
+    ));
+
+    // Background image (stores URL)
+    $wp_customize->add_setting('frontpage_bg_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'mytheme_sanitize_image_url',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'frontpage_bg_image_control', array(
+        'label'    => __('Hero background image', 'mytheme'),
+        'section'  => 'frontpage_hero_section',
+        'settings' => 'frontpage_bg_image',
+    )));
+
+    // Background position split into horizontal and vertical controls
+
+    $wp_customize->add_setting('frontpage_bg_position_x', array(
+        'default'           => 'center',
+        'sanitize_callback' => 'mytheme_sanitize_bg_position_x',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('frontpage_bg_position_x_control', array(
+        'label'    => __('Background horizontal position', 'mytheme'),
+        'section'  => 'frontpage_hero_section',
+        'settings' => 'frontpage_bg_position_x',
+        'type'     => 'select',
+        'choices'  => array(
+            'left'   => __('Left', 'mytheme'),
+            'center' => __('Center', 'mytheme'),
+            'right'  => __('Right', 'mytheme'),
+        ),
+    ));
+
+    $wp_customize->add_setting('frontpage_bg_position_y', array(
+        'default'           => 'center',
+        'sanitize_callback' => 'mytheme_sanitize_bg_position_y',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('frontpage_bg_position_y_control', array(
+        'label'    => __('Background vertical position', 'mytheme'),
+        'section'  => 'frontpage_hero_section',
+        'settings' => 'frontpage_bg_position_y',
+        'type'     => 'select',
+        'choices'  => array(
+            'top'    => __('Top', 'mytheme'),
+            'center' => __('Center', 'mytheme'),
+            'bottom' => __('Bottom', 'mytheme'),
+        ),
+    ));
+}
+add_action('customize_register', 'mytheme_customize_frontpage');
+
+/**
+ * Output inline CSS for front page hero using the selected Customizer values
+ */
+function mytheme_frontpage_hero_css()
+{
+    if (! is_front_page()) {
+        return;
+    }
+
+    $image = get_theme_mod('frontpage_bg_image', '');
+    $position_x = get_theme_mod('frontpage_bg_position_x', 'center');
+    $position_y = get_theme_mod('frontpage_bg_position_y', 'center');
+    $position = $position_x . ' ' . $position_y;
+
+    if (! $image) {
+        return;
+    }
+
+    // Target an element with class .front-page-hero in your front-page template
+    $css = sprintf(
+        '.hero-background-customizer { background-image: url("%s"); background-position: %s;}',
+        esc_url($image),
+        esc_attr($position)
+    );
+
+    echo "\n<style id=\"front-page-hero\">" . $css . "</style>\n";
+}
+add_action('wp_head', 'mytheme_frontpage_hero_css', 11);

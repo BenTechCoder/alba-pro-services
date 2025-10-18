@@ -629,13 +629,12 @@ nf-fields-wrap :last-child {
   }
 }
 .hero-background {
-  background-image: url("https://images.pexels.com/photos/5652626/pexels-photo-5652626.jpeg");
-  background-size: cover;
   height: 90%;
   width: 100%;
   position: absolute;
-  background-position: center;
   z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 [data-map="contact"] {
   --maps-height: 25em;
@@ -1439,6 +1438,9 @@ nf-fields-wrap :last-child {
 }
 .hidden {
   display: none;
+}
+.inline {
+  display: inline;
 }
 .size-full {
   width: 100%;

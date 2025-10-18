@@ -13,7 +13,7 @@ get_header();
 
 ?>
 <div>
-        <div class="hero-background"></div>
+        <div class="hero-background hero-background-customizer" style="background-position: center;" fetchpriority="high"></div>
         <section class="wrapper py-xl">
                 <div class="stack text-light">
                         <h1>Complete Exterior Cleaning Solutions</h1>
