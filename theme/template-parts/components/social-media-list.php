@@ -17,7 +17,7 @@ while ($social_media_query->have_posts()) :
     $social_icon = get_post_meta($post->ID, 'social_media_icon')[0];
 
 ?>
-    <a href=<?php echo esc_url($social_link) ?>><i class="fa fa-<?php echo esc_textarea($social_icon); ?>"></i></a>
+    <a href=<?php echo esc_url($social_link) ?>><i class="fab fa-<?php echo esc_textarea($social_icon); ?>"></i></a>
 
 <?php
 endwhile;
