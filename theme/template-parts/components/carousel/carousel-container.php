@@ -26,7 +26,6 @@
             );
 
             if ($gallery_is_single_image === 0) {
-
                 get_template_part('template-parts/components/carousel/before-after-item', null, $carousel_config);
             }
 

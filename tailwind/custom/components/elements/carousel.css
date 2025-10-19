@@ -6,29 +6,44 @@ carousel-component {
 
 .carousel {
 	display: grid;
-	grid-template-areas: "items";
+	grid-template-areas:
+		"item-container";
 	grid-template-rows: 1fr auto;
 	overflow: hidden;
 	width: 100%;
 	max-height: 100vh;
 	position: relative;
+	gap: var(--spacing-s);
+}
+
+.carousel-item-container {
+	grid-area: item-container;
+	display: grid;
+	grid-template-areas:
+		"service"
+		"items";
+	grid-template-rows: 1fr auto;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
+
+.carousel-item-container.active {
+	opacity: 1;
+}
+
+.carousel-service {
+	grid-area: service;
 }
 
 .carousel-item {
 	grid-area: items;
 	display: grid;
 	place-items: center;
-	opacity: 0;
-	transition: opacity 0.5s ease;
-}
-
-.carousel-item.active {
-	opacity: 1;
 }
 
 .carousel img {
-  aspect-ratio: var(--carousel-img-aspect-ratio, 16/9);
-  height: var(--carousel-img-height, 100%);
+	aspect-ratio: var(--carousel-img-aspect-ratio, 16/9);
+	height: var(--carousel-img-height, 100%);
 	object-fit: cover;
 }
 
@@ -36,7 +51,7 @@ carousel-component {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	grid-area: items;
+	grid-area: item-container;
 	padding: var(--spacing-s);
 	z-index: 1;
 }

@@ -8,7 +8,7 @@ export default class CarouselComponent extends HTMLElement {
     }
 
     initCarousel() {
-        const items = this.querySelectorAll('.carousel-item');
+        const items = this.querySelectorAll('.carousel-item-container');
         const nextButton = this.querySelector('.carousel-next');
         const prevButton = this.querySelector('.carousel-prev');
         let currentIndex = 0;
