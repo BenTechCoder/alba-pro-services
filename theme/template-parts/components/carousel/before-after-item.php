@@ -8,13 +8,13 @@ if ($args['type'] === 'before_after') {
                 <figcaption>
                     <p class="underline decoration-primary">Before</p>
                 </figcaption>
-                <?php echo wp_get_attachment_image($args['before_image'], 'full'); ?>
+                <?php echo wp_get_attachment_image($args['before_image'], 'large'); ?>
             </figure>
             <figure class="stack" style="--stack-spacing: var(--spacing-s)">
                 <figcaption>
                     <p class="underline decoration-primary">After</p>
                 </figcaption>
-                <?php echo wp_get_attachment_image($args['after_image'], 'full'); ?>
+                <?php echo wp_get_attachment_image($args['after_image'], 'large'); ?>
             </figure>
         </div>
    </div>
