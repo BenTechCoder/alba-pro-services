@@ -1,3 +1,13 @@
 .footer .custom-logo {
 	max-width: 10rem;
 }
+
+.menu-item a {
+	text-decoration: underline;
+	text-decoration-color: var(--color-light);
+	transition: text-decoration-color 0.3s ease-in-out;
+}
+
+.menu-item a:hover, .menu-item a:focus {
+	text-decoration-color: var(--color-primary);
+}

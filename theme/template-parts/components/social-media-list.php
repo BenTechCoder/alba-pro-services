@@ -18,6 +18,7 @@ while ($social_media_query->have_posts()) :
 
 ?>
     <a href=<?php echo esc_url($social_link) ?>><i class="fab fa-<?php echo esc_textarea($social_icon); ?>"></i></a>
+    <a href=<?php echo esc_url($social_link) ?> class="sr-only"><?php echo esc_textarea($social_icon); ?></a>
 
 <?php
 endwhile;
