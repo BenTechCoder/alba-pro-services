@@ -15,6 +15,9 @@
  */
 @import "./tailwind/custom/file-header.css";
 @plugin "tailwindcss-motion";
+/* @plugin "tailwindcss-intersect" */
+@custom-variant intersect (&:not([no-intersect]));
+
 
 /**
  * Add Tailwind’s default theme and your custom theme.

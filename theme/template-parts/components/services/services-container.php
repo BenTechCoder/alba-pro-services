@@ -2,7 +2,7 @@
 ?>
     <section class="stack bg-secondary/80 text-light py-2xl">
         <div class="wrapper">
-            <article class="center text-center stack">
+            <article class="center text-center stack intersect-once intersect:motion-preset-slide-up">
                 <h2>Our Services</h2>
                 <p>We are Alba Pro Services, LLC. Whether you need top-rated power washing, professional gutter cleaning, fence staining, window washing, or complete residential and commercial cleaning, we’ve got you covered. We are proud to offer our comprehensive services to Raleigh, NC, and the surrounding areas.</p>
             </article>
@@ -10,7 +10,7 @@
     <?php
 } ?>
 
-    <ul class="grid py-xl wrapper" role="list" style="--grid-min-item-size: 20em">
+    <ul class="grid py-xl wrapper intersect-once intersect:motion-preset-slide-up" role="list" style="--grid-min-item-size: 20em">
 
         <?php
         $args = array(

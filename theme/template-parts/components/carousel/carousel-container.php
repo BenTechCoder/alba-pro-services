@@ -1,4 +1,4 @@
-<carousel-component>
+<carousel-component class="intersect-once intersect:motion-preset-slide-up">
     <div class="carousel" tabindex="0" aria-live="polite" style="--carousel-img-height: auto;">
         <?php
         $args = array(

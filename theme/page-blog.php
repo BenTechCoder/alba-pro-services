@@ -13,12 +13,12 @@ get_header();
 
 ?>
 
-<header class="wrapper py-xl switcher items-center">
+<header class="hero-header wrapper py-xl switcher items-center">
         <h1><?php echo get_the_title(); ?></h1>
       <?php echo get_search_form(); ?>
 </header>
 
-<section class="wrapper py-2xl grid" data-layout="50-50">
+<section class="wrapper py-2xl grid motion-preset-slide-left" data-layout="50-50">
         <?php
         $args = array(
                 'post_type'  => 'post',

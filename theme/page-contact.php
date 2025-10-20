@@ -14,7 +14,7 @@ get_header();
 ?>
 
 <section class="wrapper py-xl">
-    <div class="stack text-center center">
+    <div class="hero-header stack text-center center">
         <h1><?php echo get_the_title(); ?></h1>
         <?php the_content(); ?>
     </div>

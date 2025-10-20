@@ -5,7 +5,7 @@
         </div>
         <article class="why-cta-content stack" style="--stack-spacing: var(--spacing-l)">
             <h2>Why Choose Alba Pro Services</h2>
-            <ul class="grid" data-layout="50-50">
+            <ul class="grid intersect-once intersect:motion-preset-slide-up" data-layout="50-50">
                 <li>
                     <?php get_template_part("template-parts/svg/list-icon"); ?>
                     <div>
@@ -43,7 +43,7 @@
                     </div>
                 </li>
             </ul>
-            <a href="/contact/" class="btn bg-primary">Get a Quote</a>
+            <a href="/contact/" class="btn bg-primary intersect-once intersect:motion-preset-slide-up">Get a Quote</a>
         </article>
     </div>
 </section>

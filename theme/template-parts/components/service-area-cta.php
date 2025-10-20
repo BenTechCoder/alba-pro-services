@@ -1,7 +1,7 @@
 <section class="bg-secondary py-3xl">
-    <div class="wrapper <?php echo $args["layout"] ?>">
+    <div class="<?php echo $args["layout"] ?>">
         <div class="stack text-light" style="--stack-spacing: var(--spacing-l);">
-            <article class="stack">
+            <article class="stack intersect-once intersect:motion-preset-slide-up">
                 <h2>Our Service Area</h2>
                 <p>At Alba Pro Services, LLC, we proudly serve the Raleigh, NC area and surrounding communities. Our service area includes but is not limited to, Cary, Durham, Apex, Chapel Hill, Mooresville, Raleigh, and Hillsborough. Whether you’re in the heart of Raleigh or a nearby town, we’re here to provide exceptional exterior cleaning and maintenance services for your home or business.</p>
             </article>

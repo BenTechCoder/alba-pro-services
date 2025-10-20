@@ -14,14 +14,14 @@ get_header();
 ?>
 
 <section class="wrapper py-xl">
-    <div class="stack">
+    <div class="hero-header stack">
         <h1><?php echo get_the_title(); ?></h1>
         <?php the_content(); ?>
     </div>
 </section>
 
 <section class="py-xl bg-tertiary">
-    <div class="gallery grid wrapper">
+    <div class="gallery grid wrapper intersect-once intersect:motion-preset-slide-up">
         <?php
         $args = array(
             'post_type'  => 'gallery',

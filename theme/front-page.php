@@ -12,17 +12,17 @@ get_header();
 
 
 ?>
-<div>
-        <div class="hero-background hero-background-customizer" style="background-position: center;" fetchpriority="high"></div>
+<div class="hero" fetchpriority="high">
+        <div class="hero-background hero-background-customizer" style="background-position: center;"></div>
         <section class="wrapper py-xl">
                 <div class="stack text-light">
-                        <h1>Complete Exterior Cleaning Solutions</h1>
+                        <h1 class="motion-preset-fade-lg motion-preset-slide-up">Complete Exterior Cleaning Solutions</h1>
                         <div class="switcher">
-                                <div class="stack">
+                                <div class="stack motion-preset-fade-lg motion-preset-slide-up">
                                         <p>Alba Pro Services, LLC is your go-to for expert exterior cleaning and maintenance. From power washing and gutter cleaning to fence staining, window washing, and comprehensive residential and commercial cleaning services, we deliver eco-friendly solutions with exceptional customer care and competitive pricing. Book your appointment today to see the difference we can make for your property!</p>
                                         <a href="/contact/" class="btn bg-foreground text-background">Get a Free Quote</a>
                                 </div>
-                                <div class="contact p-m bg-primary text-dark" data-color="primary"><?php get_template_part("template-parts/components/contact-form"); ?></div>
+                                <div class="contact p-m bg-primary text-dark motion-preset-slide-left" data-color="primary"><?php get_template_part("template-parts/components/contact-form"); ?></div>
                         </div>
                 </div>
         </section>
@@ -40,7 +40,7 @@ get_header();
 <?php // get_template_part("template-parts/components/service-area-cta", null, array('layout' => 'stack center center__recursive text-center')); 
 ?>
 
-<?php get_template_part("template-parts/components/service-area-cta", null, array('layout' => 'switcher items-center')); ?>
+<?php get_template_part("template-parts/components/service-area-cta", null, array('layout' => 'wrapper switcher items-center')); ?>
 
 <?php get_template_part("template-parts/components/why-cta"); ?>
 

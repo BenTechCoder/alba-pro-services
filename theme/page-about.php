@@ -14,7 +14,7 @@ get_header();
 ?>
 
 <section class="wrapper py-xl">
-    <div class="stack text-center center">
+    <div class="hero-header stack text-center center">
         <h1><?php echo get_the_title(); ?></h1>
         <p><?php echo get_the_excerpt(); ?></p>
     </div>
@@ -30,7 +30,7 @@ get_header();
 
 <?php get_template_part("template-parts/components/service-area-cta", null, array('layout' => 'stack center text-center')); ?>
 
-<section>
+<section class="py-xl">
     <div class="contact mx-auto p-s" data-color="light"><?php get_template_part('template-parts/components/contact-form'); ?></div>
 </section>
 
