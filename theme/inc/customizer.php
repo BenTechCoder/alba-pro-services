@@ -212,7 +212,7 @@ function mytheme_frontpage_hero_css()
     }
 
     $image_id = get_theme_mod('frontpage_bg_image', 0);
-    $image = $image_id ? wp_get_attachment_image_url($image_id, 'full') : '';
+    $image = $image_id ? wp_get_attachment_image_url($image_id, 'large') : '';
     $position_x = get_theme_mod('frontpage_bg_position_x', 'center');
     $position_y = get_theme_mod('frontpage_bg_position_y', 'center');
     $position = $position_x . ' ' . $position_y;
