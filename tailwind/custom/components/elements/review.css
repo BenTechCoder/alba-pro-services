@@ -11,8 +11,8 @@
 	letter-spacing: 3px;
 	background: linear-gradient(
 		90deg,
-		var(--color-background) var(--percent),
-		var(--color-foreground) var(--percent)
+		var(--color-primary) var(--percent),
+		var(--color-primary) var(--percent)
 	);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
