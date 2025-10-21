@@ -148,3 +148,7 @@ canvas {
 	display: block;
 	block-size: auto;
 }
+
+.prose > * {
+	@apply motion-preset-slide-up;
+}

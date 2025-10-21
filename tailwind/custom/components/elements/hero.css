@@ -1,3 +1,8 @@
+.hero {
+	/* Help mitigate CLS */
+	min-height: 100vh ;
+}
+
 .hero-background {
 	height: 90%;
 	width: 100%;
@@ -5,4 +10,8 @@
 	z-index: -1;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+.hero-header {
+	@apply motion-preset-slide-up;
 }

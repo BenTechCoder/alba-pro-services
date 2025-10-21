@@ -101,6 +101,14 @@ function mytheme_sanitize_image_url($url)
 }
 
 /**
+ * Sanitize attachment id (store IDs for media controls)
+ */
+function mytheme_sanitize_attachment_id($id)
+{
+    return absint($id);
+}
+
+/**
  * Add front page settings and controls (panel -> section -> settings)
  */
 function mytheme_customize_frontpage($wp_customize)
@@ -108,7 +116,7 @@ function mytheme_customize_frontpage($wp_customize)
     // Create a panel specifically for front page options
     $wp_customize->add_panel('frontpage_panel', array(
         'title'       => __('Front Page', 'mytheme'),
-        'description' => __('Settings for the front page', 'mytheme'),
+        'description' => __('Settings for the Homepage', 'mytheme'),
         'priority'    => 160,
     ));
 
@@ -119,17 +127,25 @@ function mytheme_customize_frontpage($wp_customize)
         'priority' => 10,
     ));
 
-    // Background image (stores URL)
+    // Separate section for the "Why Choose Alba" image
+    $wp_customize->add_section('frontpage_why_section', array(
+        'title'    => __('Why Choose - Image', 'mytheme'),
+        'panel'    => 'frontpage_panel',
+        'priority' => 20,
+    ));
+
+    // Background image (stores attachment ID)
     $wp_customize->add_setting('frontpage_bg_image', array(
-        'default'           => '',
-        'sanitize_callback' => 'mytheme_sanitize_image_url',
+        'default'           => 0,
+        'sanitize_callback' => 'mytheme_sanitize_attachment_id',
         'transport'         => 'refresh',
     ));
 
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'frontpage_bg_image_control', array(
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'frontpage_bg_image_control', array(
         'label'    => __('Hero background image', 'mytheme'),
         'section'  => 'frontpage_hero_section',
         'settings' => 'frontpage_bg_image',
+        'mime_type' => 'image',
     )));
 
     // Background position split into horizontal and vertical controls
@@ -169,6 +185,20 @@ function mytheme_customize_frontpage($wp_customize)
             'bottom' => __('Bottom', 'mytheme'),
         ),
     ));
+
+    // "Why Choose" image
+    $wp_customize->add_setting('frontpage_why_image', array(
+        'default'           => 0,
+        'sanitize_callback' => 'mytheme_sanitize_attachment_id',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'frontpage_why_image_control', array(
+        'label'    => __('Why Choose Alba Pro Services Image', 'mytheme'),
+        'section'  => 'frontpage_why_section',
+        'settings' => 'frontpage_why_image',
+        'mime_type' => 'image',
+    )));
 }
 add_action('customize_register', 'mytheme_customize_frontpage');
 
@@ -181,7 +211,8 @@ function mytheme_frontpage_hero_css()
         return;
     }
 
-    $image = get_theme_mod('frontpage_bg_image', '');
+    $image_id = get_theme_mod('frontpage_bg_image', 0);
+    $image = $image_id ? wp_get_attachment_image_url($image_id, 'large') : '';
     $position_x = get_theme_mod('frontpage_bg_position_x', 'center');
     $position_y = get_theme_mod('frontpage_bg_position_y', 'center');
     $position = $position_x . ' ' . $position_y;
@@ -192,7 +223,7 @@ function mytheme_frontpage_hero_css()
 
     // Target an element with class .front-page-hero in your front-page template
     $css = sprintf(
-        '.hero-background-customizer { background-image: url("%s"); background-position: %s;}',
+        '.hero-background-customizer { background-image: url("%s"); background-position: %s; }',
         esc_url($image),
         esc_attr($position)
     );

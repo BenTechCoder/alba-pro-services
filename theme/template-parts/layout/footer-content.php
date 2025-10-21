@@ -52,22 +52,24 @@
 				<p><?php echo esc_html($name); ?></p>
 			<?php endif; ?>
 
-			<?php if ($phone = get_theme_mod('business_phone')) : ?>
+			<div class="menu-item">
+				<?php if ($phone = get_theme_mod('business_phone')) : ?>
 
-				<a href="tel:<?php echo preg_replace('/[^0-9+]/', '', $phone); ?>">
-					<?php echo esc_html($phone); ?>
-				</a>
+					<a href="tel:<?php echo preg_replace('/[^0-9+]/', '', $phone); ?>">
+						<?php echo esc_html($phone); ?>
+					</a>
 
-			<?php endif; ?>
+				<?php endif; ?>
 
-			<?php if ($email = get_theme_mod('business_email')) : ?>
+				<?php if ($email = get_theme_mod('business_email')) : ?>
 
-				<a href="mailto:<?php echo antispambot(esc_attr($email)); ?>">
-					<?php echo esc_html($email); ?>
-				</a>
+					<a href="mailto:<?php echo antispambot(esc_attr($email)); ?>">
+						<?php echo esc_html($email); ?>
+					</a>
 
-			<?php endif; ?>
+				<?php endif; ?>
 
+			</div>
 		</div>
 	</div>
 	<p class="center">© <?php echo date("Y"); ?> <?php echo esc_html(get_option('business_details_legal_name')); ?> All Rights reserved.</p>

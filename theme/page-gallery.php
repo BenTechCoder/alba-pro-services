@@ -14,14 +14,14 @@ get_header();
 ?>
 
 <section class="wrapper py-xl">
-    <div class="stack">
+    <div class="hero-header stack">
         <h1><?php echo get_the_title(); ?></h1>
         <?php the_content(); ?>
     </div>
 </section>
 
 <section class="py-xl bg-tertiary">
-    <div class="gallery grid wrapper">
+    <div class="gallery grid wrapper intersect-once intersect:motion-preset-slide-up">
         <?php
         $args = array(
             'post_type'  => 'gallery',
@@ -69,8 +69,6 @@ get_header();
         ?>
         <dialog class="lightbox" closedby="none" autofocus>
             <form method="dialog" class="lightbox-grid bg-light/70">
-                <!-- <img width="662" height="632" src="http://localhost:10046/wp-content/uploads/2025/10/Patio-After_edited.avif" class="attachment-full size-full" alt="After: Patio with shiny and clean concrete" decoding="async" srcset="http://localhost:10046/wp-content/uploads/2025/10/Patio-After_edited.avif 662w, http://localhost:10046/wp-content/uploads/2025/10/Patio-After_edited-300x286.avif 300w" sizes="(max-width: 662px) 100vw, 662px">
-                     -->
                 <div class="lightbox-controls stack p-m">
                     <span class="lightbox-alt text-step-3 font-display"></span>
                     <div class="lightbox-controls__interior">
