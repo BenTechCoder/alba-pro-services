@@ -236,7 +236,7 @@ require get_template_directory() . '/inc/template-functions.php';
 * https://gist.github.com/utkrishta/27ccc5bd4eff453b80849e8affe01526
 * Please Note: This removes WP bloat for better performance. Remove or add feaures as necessary
 */
-if (!is_admin()) wp_deregister_script('jquery');
+
 remove_action('wp_head', 'wp_shortlink_wp_head', 10);
 remove_action('template_redirect', 'wp_shortlink_header', 11);
 remove_action('wp_head', 'rsd_link'); //removes EditURI/RSD (Really Simple Discovery) link.
