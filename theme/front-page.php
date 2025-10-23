@@ -28,17 +28,16 @@ get_header();
         </section>
 </div>
 
-<?php get_template_part("template-parts/components/reviews/snippet"); ?>
-
 <?php get_template_part("template-parts/components/services/services-container"); ?>
+
+<?php get_template_part("template-parts/components/call-now-cta"); ?>
+
+<?php get_template_part("template-parts/components/reviews/snippet"); ?>
 
 <section class="stack py-xl">
         <h2 class="center text-center">Before & After</h2>
         <div class="py-l"><?php get_template_part('template-parts/components/carousel/carousel-container'); ?></div>
 </section>
-
-<?php // get_template_part("template-parts/components/service-area-cta", null, array('layout' => 'stack center center__recursive text-center')); 
-?>
 
 <?php get_template_part("template-parts/components/service-area-cta", null, array('layout' => 'wrapper switcher items-center')); ?>
 
