@@ -48,16 +48,16 @@ get_header();
             );
             if ($gallery_is_single_image === 0) {
                 get_template_part("template-parts/components/gallery/gallery-item", null, array(
-                    'title' => 'Before ' . get_the_title(),
+                    'title' => 'Before ' . $gallery_service,
                     'image' => $gallery_before_image,
                 ));
                 get_template_part("template-parts/components/gallery/gallery-item", null, array(
-                    'title' => 'After ' . get_the_title(),
+                    'title' => 'After ' . $gallery_service,
                     'image' => $gallery_after_image,
                 ));
             } else {
                 get_template_part("template-parts/components/gallery/gallery-item", null, array(
-                    'title' => get_the_title(),
+                    'title' => $gallery_service,
                     'image' => $gallery_single_image,
                 ));
             }
